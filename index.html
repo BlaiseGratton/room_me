@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="roommateApp">
+<head>
+  <meta charset="utf-8">
+  <title>Room To Grow</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <ul>
+    <li><a href="/#/prof">Profile</a></li>
+    <li><a href="/#/prof/matches">Matches</a></li>
+
+  </ul>
+  <div ng-view></div>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/main.config.js"></script>
+  <script src="js/main.constants.js"></script>
+  <script src="js/prof/prof.controllers.js"></script>
+  <script src="js/prof/prof.config.js"></script>
+  <script src="js/prof/prof.factories.js"></script>
+</body>
+</html>

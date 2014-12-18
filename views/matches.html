@@ -1,6 +1,5 @@
 <h3>Your Matches</h3>
-<slider floor="0" ceiling="100" precision="2" ng-model="matchCtrl.tightness"></slider>
-<button ng-click="matchCtrl.findMatches(0)">Find Matches</button>
+<slider class="slider" floor="0" ceiling="100" precision="2" ng-model="matchCtrl.tightness" translate="showTightness"></slider>
 <ul>
   <li ng-repeat="match in matchCtrl.matches">{{match.name}}</li>
 </ul>

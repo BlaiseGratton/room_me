@@ -49,7 +49,9 @@
       
       vm.setQuizResults = function(){
         
-        profileFactory.setQuizResults();  
+        profileFactory.setQuizResults(vm.quiz, function(data){
+        
+        });  
 
         vm.user.quiz = vm.quiz;
       };
@@ -136,12 +138,15 @@
       vm.matches = [];
      
       // user defines what percent error registers as a match between two responses
-      vm.tightness = 0;
+      vm.tightness = 50;
 
       $scope.$watch("matchCtrl.tightness", function(newVal, oldVal){
         vm.findMatches(0);
       }, true);
-
+    
+      $scope.showTightness = function(value) {
+        return value.toString();
+      };
 
       
       vm.findMatches = function(userId){
@@ -155,24 +160,13 @@
             quesDiff.push(Math.abs((user.ques3 - vm.users[i].ques3) / 5));
             quesDiff.push(Math.abs((user.ques4 - vm.users[i].ques4) / 5));
             quesDiff.push(Math.abs((user.ques5 - vm.users[i].ques5) / 5));
-            console.log(quesDiff);
-
             var avgDiff = (quesDiff.reduce(function(prev, cur) {
               return prev + cur;
             })) / 5;
 
-            if (avgDiff <= vm.tightness/100) {
-              console.log(vm.users[i].name);
+            if (avgDiff <= (100-vm.tightness)/100) {
               vm.matches.push(vm.users[i]);
             }
-
-            console.log(user.name + " & " + vm.users[i].name);
-            console.log(Math.abs((user.ques1 - vm.users[i].ques1) / 5));
-            console.log(Math.abs((user.ques2 - vm.users[i].ques2) / 5));
-            console.log(Math.abs((user.ques3 - vm.users[i].ques3) / 5));
-            console.log(Math.abs((user.ques4 - vm.users[i].ques4) / 5));
-            console.log(Math.abs((user.ques5 - vm.users[i].ques5) / 5));
-            
           }
         }
       };

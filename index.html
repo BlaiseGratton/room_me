@@ -2,7 +2,7 @@
 <html ng-app="roommateApp">
 <head>
   <meta charset="utf-8">
-  <title>Room To Grow</title>
+  <title>Room Me</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/angular-slider.min.css">
 </head>
@@ -13,6 +13,7 @@
 
   </ul>
   <div ng-view></div>
+  <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="bower_components/angular/angular-slider.min.js"></script>
@@ -22,5 +23,8 @@
   <script src="js/prof/prof.controllers.js"></script>
   <script src="js/prof/prof.config.js"></script>
   <script src="js/prof/prof.factories.js"></script>
+  <script src="js/auth/auth.factory.js"></script>
+  <script src="js/auth/auth.controllers.js"></script>
+  <script src="js/auth/auth.config.js"></script>
 </body>
 </html>

@@ -8,23 +8,25 @@
         templateUrl: 'views/profile.html',
         controller: 'ProfileController',
         controllerAs: 'profCtrl',
-        // private: true
+        private: true
       })
       .when('/prof/edit', {
         templateUrl: 'views/edit-profile.html',
         controller: 'EditController',
         controllerAs: 'profCtrl',
-        // private: true
+        private: true
       })
       .when('/prof/quiz', {
         templateUrl: 'views/quiz.html',
         controller: 'ProfileController',
-        controllerAs: 'quizCtrl'
+        controllerAs: 'quizCtrl',
+        private: true
       })
       .when('/prof/matches', {
         templateUrl: 'views/matches.html',
         controller: 'MatchController',
-        controllerAs: 'matchCtrl'
+        controllerAs: 'matchCtrl',
+        private: true
       })
       /*.when('/prof/:id', {
         templateUrl: 'views/show.html',

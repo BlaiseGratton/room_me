@@ -18,6 +18,11 @@
         template: '',
         controller: 'LogoutController'
       })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'LoginController',
+        controllerAs: 'register'
+      })
       .when('/changepassword', {
         templateUrl: 'views/changepassword.html',
         controller: 'ChangePasswordController',

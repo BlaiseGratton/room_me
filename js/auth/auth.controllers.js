@@ -13,7 +13,7 @@
       };
 
       vm.register = function(){
-        authFactory.register(vm.email, vm.password, function(){
+        authFactory.register(vm.email, vm.password, vm.user, function(){
           vm.login();
         });
       };

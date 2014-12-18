@@ -11,22 +11,31 @@
           return FIREBASE_URL + '/users/' + $rootScope.user.uid + '/info.json?auth=' + $rootScope.user.token;
         }
       }
+      
+      function getAllQuizResults(cb){
+        $http.get(FIREBASE_URL + '/user_list/' + '.json?auth=' + $rootScope.user.token)
+          .success(function(data){
+            cb(data);
+          })
+          .error(function(err){
+            console.log(err);
+          });
+      }
 
 
-
-
-
-      function setQuizResults(results, cb) {
+      function setQuizResults(results, user, cb) {
         
-        $http.post(FIREBASE_URL + '/user_list/' + '.json?auth=' + $rootScope.user.token, results)
+        var userKey = $rootScope.user.token;
+
+        $http.put(FIREBASE_URL + '/user_list/' + user + '.json?auth=' + $rootScope.user.token, results)
         .success(function(data){
-          cb(data);
+          cb(data.userKey);
         })
         .error(function(err){
           console.log(err);
         });
 
-        $http.post(_roomUrl(), results)
+        $http.put(_roomUrl(), results)
         .success(function(data){
           console.log(_roomUrl());
           cb(data);
@@ -39,6 +48,7 @@
 
       return {
         setQuizResults: setQuizResults,
+        getAllQuizResults: getAllQuizResults,
       };
     })
 }());

@@ -66,10 +66,11 @@
         });
       };
 
-      factory.register = function(email, pass, cb){
+      factory.register = function(email, pass, user, cb){
         ref.createUser({
             email    : email,
-            password : pass
+            password : pass,
+            username : user,
           }, function(error, authData) {
             if (error === null) {
               console.log('User created successfully', authData);

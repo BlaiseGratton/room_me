@@ -71,7 +71,7 @@
             email    : email,
             password : pass,
             username : user,
-          }, function(error, authData) {
+          }, function(error, authData, user) {
             if (error === null) {
               console.log('User created successfully', authData);
               cb();

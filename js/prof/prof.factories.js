@@ -21,7 +21,16 @@
             console.log(err);
           });
       }
-
+      
+      function submitProfile(profile){
+        $http.put(_roomUrl(), profile)
+          .success(function(data){
+            
+          })
+          .error(function(err){
+            console.log(err);
+          });
+      }
 
       function setQuizResults(results, user, cb) {
         
@@ -34,6 +43,7 @@
         .error(function(err){
           console.log(err);
         });
+        
 
         $http.put(_roomUrl(), results)
         .success(function(data){
@@ -49,6 +59,8 @@
       return {
         setQuizResults: setQuizResults,
         getAllQuizResults: getAllQuizResults,
+        submitProfile: submitProfile,
+
       };
     })
 }());

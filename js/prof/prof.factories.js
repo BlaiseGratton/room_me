@@ -12,6 +12,17 @@
         }
       }
       
+      function getUserInfo(cb){
+        $http.get(FIREBASE_URL + '/users/' + $rootScope.user.uid + '.json?auth=' + $rootScope.user.token)
+          .success(function(data){
+            console.log(data);
+            cb(data);
+          })
+          .error(function(err){
+            console.log(err);
+          });
+      }
+
       function getAllQuizResults(cb){
         $http.get(FIREBASE_URL + '/user_list/' + '.json?auth=' + $rootScope.user.token)
           .success(function(data){
@@ -23,7 +34,7 @@
       }
       
       function submitProfile(profile){
-        $http.put(_roomUrl(), profile)
+        $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/info.json?auth=' + $rootScope.user.token, profile)
           .success(function(data){
             
           })
@@ -45,7 +56,8 @@
         });
         
 
-        $http.put(_roomUrl(), results)
+        $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/quiz.json?auth=' + $rootScope.user.token
+, results)
         .success(function(data){
           console.log(_roomUrl());
           cb(data);
@@ -60,7 +72,7 @@
         setQuizResults: setQuizResults,
         getAllQuizResults: getAllQuizResults,
         submitProfile: submitProfile,
-
+        getUserInfo: getUserInfo
       };
     })
 }());

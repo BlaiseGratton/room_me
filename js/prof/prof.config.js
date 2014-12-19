@@ -18,7 +18,7 @@
       })
       .when('/prof/quiz', {
         templateUrl: 'views/quiz.html',
-        controller: 'ProfileController',
+        controller: 'QuizController',
         controllerAs: 'quizCtrl',
         private: true
       })

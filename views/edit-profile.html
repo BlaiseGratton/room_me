@@ -3,15 +3,15 @@
 <form name="editProfile" ng-submit="profCtrl.submitProfile()" novalidate>
   <div>
     <label>Username:</label>
-    <input type="text" ng-model="profCtrl.user.username" required>
+    <input type="text" ng-model="profCtrl.info.username" required>
   </div>
   <div>
     <label>About:</label>
-    <textarea ng-model="profCtrl.user.about" required></textarea>
+    <textarea ng-model="profCtrl.info.about" required></textarea>
   </div>
   <div>
     <label>Area(s) Desired:</label>
-    <input type="text" ng-list ng-model="profCtrl.user.areas" required>
+    <input type="text" ng-list ng-model="profCtrl.info.areas" required>
   </div>
   <input type="submit" value="Save">
 </form>

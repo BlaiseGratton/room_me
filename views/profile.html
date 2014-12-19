@@ -3,6 +3,11 @@
 <h3>Your Profile</h3>
 
 <ul>
-  <li><em>Name:</em> {{profCtrl.user.name}} </li>
+  <li><em>Name:</em> {{profCtrl.user.username}} </li>
   <li><em>About:</em> {{profCtrl.user.about}} </li>
-  <li><em>Area(s) Desired:</em> {{profCtrl.user.areas}} </li>
+  <li><em>Area(s) Desired:</em>
+    <ul>
+      <li ng-repeat="area in profCtrl.user.areas">{{area}}</li>
+    </ul>
+  </li>
+</ul>

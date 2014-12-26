@@ -1,13 +1,13 @@
-<p>profile page</p>
 
-<h3>Your Profile</h3>
+<h3>Profile</h3>
 
 <ul>
-  <li><em>Name:</em> {{profCtrl.user.username}} </li>
-  <li><em>About:</em> {{profCtrl.user.about}} </li>
+  <li><em>Username:</em> {{profCtrl.user.info.username}} </li>
+  <li><em>About:</em> {{profCtrl.user.info.about}} </li>
   <li><em>Area(s) Desired:</em>
     <ul>
-      <li ng-repeat="area in profCtrl.user.areas">{{area}}</li>
+      <li ng-repeat="area in profCtrl.user.info.areas">{{area}}</li>
     </ul>
   </li>
 </ul>
+<a href="/#/prof/edit">Edit Info</a>

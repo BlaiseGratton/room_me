@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8">
   <title>Room Me</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/angular-slider.min.css">
 </head>
 <body>
-  <ul>
-    <li><a href="/#/prof">Profile</a></li>
-    <li><a href="/#/prof/matches">Matches</a></li>
-    <li><a href="/#/prof/quiz">Quiz</a></li>
-  </ul>
+  <header>
+    <div class="logo">
+      <h1>Room Me!</h1>
+    </div>
+    <ul id="nav">
+      <li><a href="/#/prof">Profile</a></li>
+      <li><a href="/#/prof/quiz">Quiz</a></li>
+      <li><a href="/#/prof/matches">Matches</a></li>
+      <li><a href="/#/logout">Logout</a></li>
+    </ul>
+  </header>
   <div ng-view></div>
   <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="bower_components/angular/angular-slider.min.js"></script>

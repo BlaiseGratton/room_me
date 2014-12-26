@@ -32,6 +32,23 @@
             console.log(err);
           });
       }
+    
+      function openChat(user, match){
+        var chatId = [user, match];
+        chatId = chatId.sort().join("");
+        $location.path('/chats/' + chatId);
+        console.log(chatId);
+      }
+
+      /*function createUser(user){
+        $http.post(FIREBASE_URL + '/users/' + $rootScope.user.uid + 'info.json?auth=' + $rootScope.user.token, user)
+          .success(function(data){
+            
+          })
+          .error(function(err){
+            console.log(err);
+          });
+      } */
       
       function submitProfile(profile){
         $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/info.json?auth=' + $rootScope.user.token, profile)
@@ -44,20 +61,15 @@
       }
 
       function setQuizResults(results, user, cb) {
-        
-        var userKey = $rootScope.user.token;
-
         $http.put(FIREBASE_URL + '/user_list/' + user + '.json?auth=' + $rootScope.user.token, results)
         .success(function(data){
-          cb(data.userKey);
+          cb(data);
         })
         .error(function(err){
           console.log(err);
         });
         
-
-        $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/quiz.json?auth=' + $rootScope.user.token
-, results)
+        $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/quiz.json?auth=' + $rootScope.user.token, results)
         .success(function(data){
           console.log(_roomUrl());
           cb(data);
@@ -72,7 +84,8 @@
         setQuizResults: setQuizResults,
         getAllQuizResults: getAllQuizResults,
         submitProfile: submitProfile,
-        getUserInfo: getUserInfo
+        getUserInfo: getUserInfo,
+        openChat: openChat
       };
     })
 }());

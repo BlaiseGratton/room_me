@@ -1,17 +1,17 @@
 
 
 <form name="editProfile" ng-submit="profCtrl.submitProfile()" novalidate>
-  <div>
+  <div class="form-group">
     <label>Username:</label>
-    <input type="text" ng-model="profCtrl.info.username" required>
+    <input class="form-control" type="text" ng-model="profCtrl.user.info.username" required>
   </div>
-  <div>
+  <div class="form-group">
     <label>About:</label>
-    <textarea ng-model="profCtrl.info.about" required></textarea>
+    <textarea class="form-control" ng-model="profCtrl.user.info.about" required></textarea>
   </div>
-  <div>
+  <div class="form-group">
     <label>Area(s) Desired:</label>
-    <input type="text" ng-list ng-model="profCtrl.info.areas" required>
+    <input type="text" ng-list class="form-control" ng-model="profCtrl.user.info.areas" required>
   </div>
   <input type="submit" value="Save">
 </form>

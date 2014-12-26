@@ -28,6 +28,12 @@
         controllerAs: 'matchCtrl',
         private: true
       })
+      .when('/chats/:id', {
+        templateUrl: 'views/chat.html',
+        controller: 'ChatController',
+        controllerAs: 'chatCtrl', 
+        private: true
+      })
       /*.when('/prof/:id', {
         templateUrl: 'views/show.html',
         controller: 'ProfileController',

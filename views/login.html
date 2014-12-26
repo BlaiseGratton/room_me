@@ -7,7 +7,7 @@
     <label>Password</label>
     <input class="form-control" type="password" ng-model="login.password" required>
   </div>
-  <div class="btn btn-default btn-block" ng-class="{disabled: loginForm.$invalid}" ng-click="login.register()">Register</div>
+  <a class="btn btn-default btn-block" href="/#/register">Register</a>
   <input type="submit" class="btn btn-primary btn-block" value="Login" ng-class="{disabled: loginForm.$invalid}">
   <div class="btn btn-warning btn-block" ng-class="{disabled: !login.email }" ng-click="login.forgotPassword()">Forgot Password</div>
 </form>

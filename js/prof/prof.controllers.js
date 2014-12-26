@@ -67,54 +67,59 @@
     })
     .controller('ChatController', function(profileFactory, $location, $rootScope){
       var vm = this;
-      
       vm.chatId = $location.$$path.slice(7);
-
+      console.log(vm.chatId);
+      
       profileFactory.getUserInfo(function(data){
         vm.user = data;
-      });
+        vm.username = vm.user.info.username;
+        /*var prep = vm.chatId;
+        var index = vm.chatId.indexOf(vm.username);
+        var length = vm.username.length;
+        vm.match = vm.chatId.split().splice(index, length).join("");
+        console.log(vm.match);*/
 
+        vm.match = vm.chatId.replace(vm.username, "");
+      });
+    
       vm.url = 'https://roommate-finder.firebaseio.com/chats/' + vm.chatId + '?auth=' + $rootScope.user.token;
-      console.log(vm.url);
+      // console.log(vm.url);
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
+     
       
-      // REGISTER DOM ELEMENTS
+      /*
+       *  Chat functionality derived directly from Chat example at https://www.firebase.com/docs/web/examples.html
+       */
+
       vm.messageField = $('#messageInput');
       vm.nameField = $('#nameInput');
       vm.messageList = $('#example-messages');
 
-      // LISTEN FOR KEYPRESS EVENT
       vm.messageField.keypress(function (e) {
         if (e.keyCode == 13) {
-          //FIELD VALUES
           vm.username = vm.nameField.val();
           vm.message = vm.messageField.val();
 
-          //SAVE DATA TO FIREBASE AND EMPTY FIELD
           vm.messagesRef.push({name: vm.username, text: vm.message});
           vm.messageField.val('');
         }
       });
 
-      // Add a callback that is triggered for each chat message.
       vm.messagesRef.limitToLast(10).on('child_added', function (snapshot) {
-        //GET DATA
         vm.data = snapshot.val();
         vm.username = vm.data.name || "anonymous";
         vm.message = vm.data.text;
 
-        //CREATE ELEMENTS MESSAGE & SANITIZE TEXT
         vm.messageElement = $("<li>");
         vm.nameElement = $("<strong class='example-chat-username'></strong>");
         vm.nameElement.text(vm.username);
         vm.messageElement.text(vm.message).prepend(vm.nameElement);
 
-        //ADD MESSAGE
         vm.messageList.append(vm.messageElement);
 
-        //SCROLL TO BOTTOM OF MESSAGE LIST
         vm.messageList[0].scrollTop = vm.messageList[0].scrollHeight; 
       });
+      //end of Firebase Chat example
         
     })
     .controller('EditController', function(profileFactory){

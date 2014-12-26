@@ -1,11 +1,11 @@
-<h3>Chat with {{}}</h3>
+<h3>Chat with {{chatCtrl.match}}</h3>
 
 <div class="example-chat l-demo-container">
   <header>Firebase Chat Demo</header>
 
   <div class='example-chat-toolbar'>
     <label for="nameInput">Username:</label>
-    <input type='text' id='nameInput' placeholder='enter a username...'>
+    <input type='text' ng-model="chatCtrl.username" id='nameInput' placeholder='enter a username...'>
   </div>
 
   <ul id='example-messages' class="example-chat-messages"></ul>

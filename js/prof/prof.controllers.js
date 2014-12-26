@@ -65,7 +65,7 @@
       }
 
     })
-    .controller('ChatController', function(profileFactory, $location){
+    .controller('ChatController', function(profileFactory, $location, $rootScope){
       var vm = this;
       
       vm.chatId = $location.$$path.slice(7);
@@ -74,6 +74,8 @@
         vm.user = data;
       });
 
+      vm.url = 'https://roommate-finder.firebaseio.com/chats/' + vm.chatId + '?auth=' + $rootScope.user.token;
+      console.log(vm.url);
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
       
       // REGISTER DOM ELEMENTS
@@ -89,7 +91,7 @@
           vm.message = vm.messageField.val();
 
           //SAVE DATA TO FIREBASE AND EMPTY FIELD
-          vm.messagesRef.push({name:username, text:message});
+          vm.messagesRef.push({name: vm.username, text: vm.message});
           vm.messageField.val('');
         }
       });
@@ -98,20 +100,20 @@
       vm.messagesRef.limitToLast(10).on('child_added', function (snapshot) {
         //GET DATA
         vm.data = snapshot.val();
-        vm.username = data.name || "anonymous";
-        vm.message = data.text;
+        vm.username = vm.data.name || "anonymous";
+        vm.message = vm.data.text;
 
         //CREATE ELEMENTS MESSAGE & SANITIZE TEXT
         vm.messageElement = $("<li>");
         vm.nameElement = $("<strong class='example-chat-username'></strong>");
-        vm.nameElement.text(username);
-        vm.messageElement.text(message).prepend(nameElement);
+        vm.nameElement.text(vm.username);
+        vm.messageElement.text(vm.message).prepend(vm.nameElement);
 
         //ADD MESSAGE
-        vm.messageList.append(messageElement);
+        vm.messageList.append(vm.messageElement);
 
         //SCROLL TO BOTTOM OF MESSAGE LIST
-        vm.messageList[0].scrollTop = messageList[0].scrollHeight; 
+        vm.messageList[0].scrollTop = vm.messageList[0].scrollHeight; 
       });
         
     })

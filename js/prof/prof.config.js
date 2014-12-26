@@ -32,7 +32,6 @@
         templateUrl: 'views/chat.html',
         controller: 'ChatController',
         controllerAs: 'chatCtrl', 
-        private: true
       })
       /*.when('/prof/:id', {
         templateUrl: 'views/show.html',

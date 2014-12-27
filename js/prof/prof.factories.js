@@ -32,7 +32,17 @@
             console.log(err);
           });
       }
-    
+      
+      function getChatUsers(cb){
+        $http.get(FIREBASE_URL + '/chats.json')
+          .success(function(data){
+            cb(data);
+          })
+          .error(function(err){
+            console.log(err);
+          });
+      }
+
       function openChat(user, match){
         var chatId = [user, match];
         chatId = chatId.sort().join("");
@@ -97,6 +107,7 @@
         getUserInfo: getUserInfo,
         openChat: openChat,
         getHousing: getHousing,
+        getChatUsers: getChatUsers
       };
     })
 }());

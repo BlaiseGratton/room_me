@@ -24,8 +24,18 @@
       profileFactory.getAllQuizResults(function(data){
         vm.user_list = data;
         console.log(vm.user_list);
+        vm.findMatches(vm.user.info.username);
       });
       
+      profileFactory.getChatUsers(function(data){
+        vm.chats = data;
+        console.log(vm.chats);
+      });
+      
+      vm.checkChats = function(){
+        
+      }
+
       vm.matches = [];
      
       // user defines what percent error registers as a match between two responses
@@ -77,17 +87,9 @@
       profileFactory.getUserInfo(function(data){
         vm.user = data;
         vm.username = vm.user.info.username;
-        /*var prep = vm.chatId;
-        var index = vm.chatId.indexOf(vm.username);
-        var length = vm.username.length;
-        vm.match = vm.chatId.split().splice(index, length).join("");
-        console.log(vm.match);*/
-
         vm.match = vm.chatId.replace(vm.username, "");
       });
     
-      vm.url = 'https://roommate-finder.firebaseio.com/chats/' + vm.chatId + '?auth=' + $rootScope.user.token;
-      // console.log(vm.url);
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
      
       
@@ -96,12 +98,10 @@
        */
 
       vm.messageField = $('#messageInput');
-      vm.nameField = $('#nameInput');
       vm.messageList = $('#example-messages');
 
       vm.messageField.keypress(function (e) {
         if (vm.messageField.val() !== '' && e.keyCode == 13) {
-          //vm.username = vm.nameField.val();
           vm.message = vm.messageField.val();
 
           vm.messagesRef.push({name: vm.username, text: vm.message});

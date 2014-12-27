@@ -65,11 +65,15 @@
       }
 
     })
-    .controller('ChatController', function(profileFactory, $location, $rootScope){
+    .controller('ChatController', function(profileFactory, $http, $location, $rootScope){
       var vm = this;
       vm.chatId = $location.$$path.slice(7);
-      console.log(vm.chatId);
-      
+     
+      profileFactory.getHousing(function(data){
+        vm.housing = data;
+        console.log(data);
+      });
+       
       profileFactory.getUserInfo(function(data){
         vm.user = data;
         vm.username = vm.user.info.username;
@@ -96,8 +100,8 @@
       vm.messageList = $('#example-messages');
 
       vm.messageField.keypress(function (e) {
-        if (e.keyCode == 13) {
-          vm.username = vm.nameField.val();
+        if (vm.messageField.val() !== '' && e.keyCode == 13) {
+          //vm.username = vm.nameField.val();
           vm.message = vm.messageField.val();
 
           vm.messagesRef.push({name: vm.username, text: vm.message});

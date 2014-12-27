@@ -39,6 +39,16 @@
         $location.path('/chats/' + chatId);
         console.log(chatId);
       }
+      
+      function getHousing(cb){
+        $http.get('http://polling.3taps.com/poll?auth_token=f4bd5054960b9e9319c7d844dccc1682&anchor=1651441938&location.city=usa-nas-nas&category=RHFR|RSUB|RSWP')
+          .success(function(data){
+            cb(data);
+          })
+          .error(function(err){
+            console.log(err);
+          });
+      }
 
       /*function createUser(user){
         $http.post(FIREBASE_URL + '/users/' + $rootScope.user.uid + 'info.json?auth=' + $rootScope.user.token, user)
@@ -85,7 +95,8 @@
         getAllQuizResults: getAllQuizResults,
         submitProfile: submitProfile,
         getUserInfo: getUserInfo,
-        openChat: openChat
+        openChat: openChat,
+        getHousing: getHousing,
       };
     })
 }());

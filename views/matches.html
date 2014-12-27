@@ -2,5 +2,5 @@
 <slider class="slider" floor="0.1" ceiling="100.00" precision="1" step=".1" ng-model="matchCtrl.tightness" translate="showTightness"></slider>{{matchCtrl.tightness}}%
 
 <ul>
-  <li ng-repeat="match in matchCtrl.matches"><a ng-click="matchCtrl.openChat(match.name)">{{match.name}}</a></li>
+  <li ng-repeat="match in matchCtrl.matches" class="ng-init: matchCtrl.checkChats();"><a ng-click="matchCtrl.openChat(match.name)">{{match.name}}</a></li>
 </ul>

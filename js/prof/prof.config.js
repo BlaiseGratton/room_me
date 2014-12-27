@@ -33,17 +33,5 @@
         controller: 'ChatController',
         controllerAs: 'chatCtrl', 
       })
-      /*.when('/prof/:id', {
-        templateUrl: 'views/show.html',
-        controller: 'ProfileController',
-        controllerAs: 'show',
-        // private: true
-      })
-      .when('/prof/:id/edit', {
-        templateUrl: 'views/form.html',
-        controller: 'ProfileController',
-        controllerAs: 'todo',
-        // private: true
-      })*/
     })
 }());

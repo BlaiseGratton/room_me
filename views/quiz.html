@@ -1,10 +1,17 @@
 <h3>Survey</h3>
 <ul>
-  <li><input ng-model="quizCtrl.user.quiz.ques1"></li>
-  <li><input ng-model="quizCtrl.user.quiz.ques2"></li>
-  <li><input ng-model="quizCtrl.user.quiz.ques3"></li>
-  <li><input ng-model="quizCtrl.user.quiz.ques4"></li>
-  <li><input ng-model="quizCtrl.user.quiz.ques5"></li>
+  <li>How saflj asfljiri sisfjiw skjs igj?</li>
+  <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques1"></slider>
+  <li>How saflj asfljiri sisfjiw skjs igj?</li>
+  <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques2"></slider>
+  <li>How saflj asfljiri sisfjiw skjs igj?</li>
+  <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques3"></slider>
+  <li>How saflj asfljiri sisfjiw skjs igj?</li>
+  <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques4"></slider>
+  <li>How saflj asfljiri sisfjiw skjs igj?</li>
+  <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques5"></slider>
+  <li>How saflj asfljiri sisfjiw skjs igj?</li>
+  <li><input type="radio" ng-model="quizCtrl.user.quiz.ques6" value="yes" name="ques6"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques6" value="no" name="ques6"> No </li>
 </ul>
 
 <button ng-click="quizCtrl.setQuizResults()">Save</button>

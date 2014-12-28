@@ -26,19 +26,20 @@ body {
 }
 
 li.chatting::before {
-  background-color: green;
+  background-color: #7cbc3c;
   content: ''; 
   border-radius: 50%;
-  width: 7px;
-  height: 7px;
-  padding: 5px;
-  margin-right: -25px;
-  position: absolute;
-  left: 236px;
-  margin-top: 6px;
+  margin-right: -11px;
+  padding: 0px 5px;
+  position: relative;
+  left: -21px;
+  bottom: 2px;
+  font-size: 8px;
 }
 
 #match-list li {
   text-align: left;
   padding-left: 1em;
+  line-height: 27px;
 }
+

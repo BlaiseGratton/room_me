@@ -32,8 +32,14 @@
         console.log(vm.chats);
       });
       
-      vm.checkChats = function(){
-        
+      vm.checkChats = function(match){
+        console.log(match.name);
+        console.log(vm.user);
+        for (var chat in vm.chats){ 
+          if (chat.indexOf(match.name) !== -1 && chat.indexOf(vm.user.info.username) !== -1){ 
+            return "chatting";
+          }
+        }
       }
 
       vm.matches = [];

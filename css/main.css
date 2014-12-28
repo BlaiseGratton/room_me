@@ -24,3 +24,21 @@ body {
   max-width: 800px;
   margin: auto;
 }
+
+li.chatting::before {
+  background-color: green;
+  content: ''; 
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  padding: 5px;
+  margin-right: -25px;
+  position: absolute;
+  left: 236px;
+  margin-top: 6px;
+}
+
+#match-list li {
+  text-align: left;
+  padding-left: 1em;
+}

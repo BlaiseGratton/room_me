@@ -15,7 +15,6 @@
       function getUserInfo(cb){
         $http.get(FIREBASE_URL + '/users/' + $rootScope.user.uid + '.json?auth=' + $rootScope.user.token)
           .success(function(data){
-            console.log(data);
             cb(data);
           })
           .error(function(err){
@@ -47,7 +46,6 @@
         var chatId = [user, match];
         chatId = chatId.sort().join("");
         $location.path('/chats/' + chatId);
-        console.log(chatId);
       }
       
       function getHousing(cb){
@@ -60,16 +58,6 @@
           });
       }
 
-      /*function createUser(user){
-        $http.post(FIREBASE_URL + '/users/' + $rootScope.user.uid + 'info.json?auth=' + $rootScope.user.token, user)
-          .success(function(data){
-            
-          })
-          .error(function(err){
-            console.log(err);
-          });
-      } */
-      
       function submitProfile(profile){
         $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/info.json?auth=' + $rootScope.user.token, profile)
           .success(function(data){

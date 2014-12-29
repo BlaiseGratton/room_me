@@ -45,7 +45,7 @@
       vm.matches = [];
      
       // user defines what percent error registers as a match between two responses
-      vm.tightness = 50;
+      vm.tightness = 66.6;
 
       $scope.$watch("matchCtrl.tightness", function(newVal, oldVal){
         vm.findMatches(vm.user.info.username);
@@ -87,21 +87,35 @@
      
       profileFactory.getHousing(function(data){
         vm.housing = data;
-        console.log(data);
+        console.log(vm.housing);
       });
-       
+      
+      vm.userQueries = {
+        bedrooms: "2br",
+      };
+      
+      vm.results = [];
+
+      vm.findHousing = function(){
+        vm.housing.postings.forEach(function(listing){
+          console.log(listing.annotations);
+          if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
+            vm.results.push(listing);
+          }
+        });
+      };
+
       profileFactory.getUserInfo(function(data){
         vm.user = data;
         vm.username = vm.user.info.username;
         vm.match = vm.chatId.replace(vm.username, "");
       });
-    
-      vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
-     
       
+      vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
+
       /*
-       *  Chat functionality derived directly from Chat example at https://www.firebase.com/docs/web/examples.html
-       */
+      *  Chat functionality derived directly from Chat example at https://www.firebase.com/docs/web/examples.html
+     */
 
       vm.messageField = $('#messageInput');
       vm.messageList = $('#example-messages');

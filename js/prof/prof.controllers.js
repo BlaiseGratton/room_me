@@ -17,13 +17,10 @@
  
       profileFactory.getUserInfo(function(data){
         vm.user = data;
-        console.log(data);
-
       }); 
        
       profileFactory.getAllQuizResults(function(data){
         vm.user_list = data;
-        console.log(vm.user_list);
         vm.findMatches(vm.user.info.username);
       });
       
@@ -33,8 +30,6 @@
       });
       
       vm.checkChats = function(match){
-        console.log(match.name);
-        console.log(vm.user);
         for (var chat in vm.chats){ 
           if (chat.indexOf(match.name) !== -1 && chat.indexOf(vm.user.info.username) !== -1){ 
             return "chatting";
@@ -94,11 +89,9 @@
         bedrooms: "2br",
       };
       
-      vm.results = [];
-
       vm.findHousing = function(){
+        vm.results = [];
         vm.housing.postings.forEach(function(listing){
-          console.log(listing.annotations);
           if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
             vm.results.push(listing);
           }
@@ -149,6 +142,8 @@
     .controller('EditController', function(profileFactory){
       var vm = this;
       
+      vm.areas = ["East Nashville", "Sylvan Park", "Sylvan Heights", "Brentwood", "Inglewood", "West End", "Downtown"];
+
       profileFactory.getUserInfo(function(data){
         vm.user = data;
       });

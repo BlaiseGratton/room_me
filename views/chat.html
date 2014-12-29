@@ -1,5 +1,5 @@
 <div class="chat-container">
-  <header>Chat with {{chatCtrl.match}}</header>
+  <h3>Chat with {{chatCtrl.match}}</h3>
 
   <ul id='example-messages' class="example-chat-messages"></ul>
 
@@ -8,7 +8,7 @@
   </footer>
 </div>
 <div class="craigslist-container">
-  <header>Craigslist Results</header>
+  <h3>Craigslist Results</h3>
   <select ng-model="chatCtrl.userQueries.bedrooms">
     <option value="1br">1 bedroom</option>
     <option value="2br">2 bedrooms</option>
@@ -17,6 +17,9 @@
     <option value="5br">5 bedrooms</option>
   </select>
   <button ng-click="chatCtrl.findHousing()">Find Housing</button>
-  <ul>
-    <li ng-repeat="result in chatCtrl.results"><a>{{result}}</a></li>
-  </ul>
+  <div id="results-list" ng-show="chatCtrl.results">
+    <h3>Results ({{chatCtrl.results.length}})</h3>
+    <ul>
+      <li ng-repeat="result in chatCtrl.results"><a>{{result.heading}}</a></li>
+    </ul>
+  </div>

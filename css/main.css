@@ -43,3 +43,12 @@ li.chatting::before {
   line-height: 27px;
 }
 
+#area-input label {
+  display: block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+#area-input div {
+  height: 100%;
+}

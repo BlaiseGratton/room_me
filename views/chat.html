@@ -16,6 +16,13 @@
     <option value="4br">4 bedrooms</option>
     <option value="5br">5 bedrooms</option>
   </select>
+  <select ng-model="chatCtrl.userQueries.areas">
+    <option value="sylvan-park">Sylvan Park</option>
+    <option value="downtown">Downtown</option>
+    <option value="east-nashville">East Nashville</option>
+    <option value="brentwood">Brentwood</option>
+    <option value="midtown">Midtown</option>
+  </select>
   <button ng-click="chatCtrl.findHousing()">Find Housing</button>
   <div id="results-list" ng-show="chatCtrl.results">
     <h3>Results ({{chatCtrl.results.length}})</h3>

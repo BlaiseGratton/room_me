@@ -87,13 +87,27 @@
       
       vm.userQueries = {
         bedrooms: "2br",
+        areas: "downtown",
       };
-      
+     
+      vm.areaZipcodes = {
+        'downtown': [37201, 37219],
+        'brentwood': [37027],
+        'sylvan-park': [37209],
+        'east-nashville': [37206],
+        'midtown': [37203],
+      }
+
       vm.findHousing = function(){
         vm.results = [];
         vm.housing.postings.forEach(function(listing){
           if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
-            vm.results.push(listing);
+            var zips = vm.areaZipcodes[vm.userQueries.areas];
+            zips.forEach(function(zip){
+              if (listing.location.zipcode.indexOf(zip) !== -1){
+                vm.results.push(listing);
+              }
+            });
           }
         });
       };

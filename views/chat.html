@@ -27,6 +27,6 @@
   <div id="results-list" ng-show="chatCtrl.results">
     <h3>Results ({{chatCtrl.results.length}})</h3>
     <ul>
-      <li ng-repeat="result in chatCtrl.results"><a>{{result.heading}}</a></li>
+      <li ng-repeat="result in chatCtrl.results"><a target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>
     </ul>
   </div>

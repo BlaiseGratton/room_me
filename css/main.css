@@ -52,3 +52,14 @@ li.chatting::before {
 #area-input div {
   height: 100%;
 }
+
+.chat-container {
+  max-width: 50%;
+  display: inline-block;
+}
+
+.saved-posts {
+  width: 50%;
+  display: inline-block;
+  float: right;
+}

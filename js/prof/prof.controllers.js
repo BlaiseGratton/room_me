@@ -89,36 +89,36 @@
 
 
       vm.areaZipcodes = {
-        'downtown': [37201, 37219],
-        'brentwood': [37027],
-        'sylvan-park': [37209],
-        'east-nashville': [37206],
-        'midtown': [37203],
-        'bellevue': [37221],
-        'belle-meade': [37205],
-        'green-hills': [37215],
-        'antioch': [37013],
-        'south-nashville': [37211],
-        'oak-hill': [37220],
-        'percy-priest': [37217],
-        'lafayette': [37210],
-        '12-south': [37204],
-        'hillsboro-village': [37212],
-        'germantown': [37208],
-        'east-riverfront': [37213],
-        'donelson': [37214],
-        'hermitage': [37076],
-        'madison': [37115],
-        'inglewood': [37216],
-        'whites-creek': [37189],
-        'bordeaux': [37218],
-      }
-
+        'Downtown': [37201, 37219],
+        'Brentwood': [37027],
+        'Sylvan Park': [37209],
+        'East Nashville': [37206],
+        'Midtown': [37203],
+        'Bellevue': [37221],
+        'Belle Meade': [37205],
+        'Green Hills': [37215],
+        'Antioch': [37013],
+        'South Nashville': [37211],
+        'Oak Hill': [37220],
+        'Percy Priest': [37217],
+        'Lafayette': [37210],
+        '12 South': [37204],
+        'Hillsboro Village': [37212],
+        'Germantown': [37208],
+        'East Riverfront': [37213],
+        'Donelson': [37214],
+        'Hermitage': [37076],
+        'Madison': [37115],
+        'Inglewood': [37216],
+        'Whites Creek': [37189],
+        'Bordeaux': [37218],
+      };
+      
       vm.findHousing = function(){
         vm.results = [];
         vm.housing.postings.forEach(function(listing){
           if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
-            var zips = vm.areaZipcodes[vm.userQueries.areas];
+            var zips = vm.areaZipcodes[vm.userQueries.area];
             zips.forEach(function(zip){
               if (listing.location.zipcode.indexOf(zip) !== -1){
                 vm.results.push(listing);

@@ -30,7 +30,7 @@
       <option value="4br">4 bedrooms</option>
       <option value="5br">5 bedrooms</option>
     </select>
-    <select k-ng-model="chatCtrl.userQueries.areas">
+    <select k-ng-model="chatCtrl.userQueries.areas" id="area-selector" ng-model="chatCtrl.userQueries.area">
       <option value="" disabled>-Select an area-</option>
       <option ng-repeat="area in chatCtrl.userQueries.areas" value="{{area}}">{{area}}</option>
     </select> 

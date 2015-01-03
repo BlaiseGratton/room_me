@@ -30,10 +30,10 @@
       <option value="4br">4 bedrooms</option>
       <option value="5br">5 bedrooms</option>
     </select>
-    <select ng-model="chatCtrl.userQueries.areas" ng-init="chatCtrl.userQueries.areas=['-Select an area-']">
-      <option selected="selected" disabled>-Select an area-</option>
+    <select k-ng-model="chatCtrl.userQueries.areas">
+      <option value="" disabled>-Select an area-</option>
       <option ng-repeat="area in chatCtrl.userQueries.areas" value="{{area}}">{{area}}</option>
-    </select>
+    </select> 
     <button ng-click="chatCtrl.findHousing()">Find Housing</button>
     <div id="results-list" ng-show="chatCtrl.results">
       <h3>Results ({{chatCtrl.results.length}})</h3>

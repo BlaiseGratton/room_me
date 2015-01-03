@@ -84,8 +84,9 @@
       
       vm.userQueries = {
         bedrooms: "2br",
-        areas: [],
+        areas: ['-Select an area-'],
       };
+
 
       vm.areaZipcodes = {
         'downtown': [37201, 37219],
@@ -153,7 +154,6 @@
           });
         });
         vm.userQueries.areas = vm.matchedAreas;
-        console.log(vm.userQueries.areas);
       }
 
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);

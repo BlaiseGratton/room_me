@@ -73,7 +73,7 @@
       }
 
     })
-    .controller('ChatController', function(profileFactory, $scope, $http, $location, $rootScope){
+    .controller('ChatController', function(profileFactory, $http, $location, $rootScope){
       var vm = this;
       vm.chatId = $location.$$path.slice(7);
      
@@ -84,9 +84,9 @@
       
       vm.userQueries = {
         bedrooms: "2br",
-        areas: "downtown",
+        areas: [],
       };
-     
+
       vm.areaZipcodes = {
         'downtown': [37201, 37219],
         'brentwood': [37027],
@@ -146,10 +146,14 @@
         user.info.areas.forEach(function(area){
           matchInfo.info.areas.forEach(function(area_match){
             if (area === area_match){
-              vm.matchedAreas.push(area);
+              if (typeof(area) === "string") {
+                vm.matchedAreas.push(area);
+              }
             }
           });
         });
+        vm.userQueries.areas = vm.matchedAreas;
+        console.log(vm.userQueries.areas);
       }
 
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);

@@ -63,3 +63,15 @@ li.chatting::before {
   display: inline-block;
   float: right;
 }
+
+
+.match-info {
+  max-width: 50%;
+  display: inline-block;
+}
+
+.craigslist-container {
+  width: 50%;
+  display: inline-block;
+  float: right;
+}

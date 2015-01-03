@@ -1,4 +1,4 @@
-<div class="match-container">
+<div class="shared-container">
   <div class="chat-container">
     <h3>Chat with {{chatCtrl.match}}</h3>
 
@@ -12,10 +12,10 @@
     <h3>Saved Posts</h3>
   </div>
 </div>
-<div>
+<div class="info-search-container">
   <div class="match-info">
     <h3>About {{chatCtrl.match}}</h3>
-    <p>{{chatCtrl.matchInfo.about}}</p>
+    <p>{{chatCtrl.matchInfo.info.about}}</p>
     <h4>You and {{chatCtrl.match}} are interested in:<h4>
     <ul>
       <li ng-repeat="area in chatCtrl.matchedAreas">{{area}}</li>

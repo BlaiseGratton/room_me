@@ -26,12 +26,11 @@
       
       profileFactory.getChatUsers(function(data){
         vm.chats = data;
-        console.log(vm.chats);
       });
       
       vm.checkChats = function(match){
         for (var chat in vm.chats){ 
-          if (chat.indexOf(match.name) !== -1 && chat.indexOf(vm.user.info.username) !== -1){ 
+          if (chat.indexOf(match.info.username) !== -1 && chat.indexOf(vm.user.info.username) !== -1){ 
             return "chatting";
           }
         }
@@ -46,20 +45,18 @@
         vm.findMatches(vm.user.info.username);
       }, true);
     
-      $scope.showTightness = function(value) {
-        return value.toString();
-      };
-
       vm.findMatches = function(userId){
         vm.matches = [];
         for (var key in vm.user_list) {
+          console.log(vm.user_list[key]);
+          console.log(vm.user);
           if (key !== userId) {
             var quesDiff = [];
-            quesDiff.push(Math.abs((vm.user.quiz.ques1 - vm.user_list[key].ques1) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques2 - vm.user_list[key].ques2) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques3 - vm.user_list[key].ques3) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques4 - vm.user_list[key].ques4) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques5 - vm.user_list[key].ques5) / 10));
+            quesDiff.push(Math.abs((vm.user.quiz.ques1 - vm.user_list[key].quiz.ques1) / 10));
+            quesDiff.push(Math.abs((vm.user.quiz.ques2 - vm.user_list[key].quiz.ques2) / 10));
+            quesDiff.push(Math.abs((vm.user.quiz.ques3 - vm.user_list[key].quiz.ques3) / 10));
+            quesDiff.push(Math.abs((vm.user.quiz.ques4 - vm.user_list[key].quiz.ques4) / 10));
+            quesDiff.push(Math.abs((vm.user.quiz.ques5 - vm.user_list[key].quiz.ques5) / 10));
             var avgDiff = (quesDiff.reduce(function(prev, cur) {
               return prev + cur;
             })) / 5;
@@ -76,7 +73,7 @@
       }
 
     })
-    .controller('ChatController', function(profileFactory, $http, $location, $rootScope){
+    .controller('ChatController', function(profileFactory, $scope, $http, $location, $rootScope){
       var vm = this;
       vm.chatId = $location.$$path.slice(7);
      
@@ -134,8 +131,27 @@
         vm.user = data;
         vm.username = vm.user.info.username;
         vm.match = vm.chatId.replace(vm.username, "");
+        vm.getMatchInfo(vm.match);
       });
       
+      vm.getMatchInfo = function(match){
+        profileFactory.getMatchInfo(match, function(data){
+          vm.matchInfo = data;
+          vm.matchAreas(vm.matchInfo, vm.user);
+        });
+      };
+       
+      vm.matchAreas = function(matchInfo, user){
+        vm.matchedAreas = [];
+        user.info.areas.forEach(function(area){
+          matchInfo.info.areas.forEach(function(area_match){
+            if (area === area_match){
+              vm.matchedAreas.push(area);
+            }
+          });
+        });
+      }
+
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
 
       /*

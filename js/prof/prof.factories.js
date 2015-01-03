@@ -58,8 +58,25 @@
           });
       }
 
+      function getMatchInfo(match, cb){
+        $http.get(FIREBASE_URL + '/user_list/' + match + '.json?auth=' + $rootScope.user.token)
+          .success(function(data){
+            cb(data);
+          })
+          .error(function(err){
+            console.log(err);
+          });
+      }
+
       function submitProfile(profile){
         $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/info.json?auth=' + $rootScope.user.token, profile)
+          .success(function(data){
+            
+          })
+          .error(function(err){
+            console.log(err);
+          });
+        $http.put(FIREBASE_URL + '/user_list/' + profile.username + '/info.json?auth=' + $rootScope.user.token, profile)
           .success(function(data){
             
           })
@@ -69,7 +86,7 @@
       }
 
       function setQuizResults(results, user, cb) {
-        $http.put(FIREBASE_URL + '/user_list/' + user + '.json?auth=' + $rootScope.user.token, results)
+        $http.put(FIREBASE_URL + '/user_list/' + user + '/quiz.json?auth=' + $rootScope.user.token, results)
         .success(function(data){
           cb(data);
         })
@@ -95,7 +112,8 @@
         getUserInfo: getUserInfo,
         openChat: openChat,
         getHousing: getHousing,
-        getChatUsers: getChatUsers
+        getChatUsers: getChatUsers,
+        getMatchInfo: getMatchInfo
       };
     })
 }());

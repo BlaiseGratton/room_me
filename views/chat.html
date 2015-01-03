@@ -12,26 +12,37 @@
     <h3>Saved Posts</h3>
   </div>
 </div>
-<div class="craigslist-container">
-  <h3>Craigslist Results</h3>
-  <select ng-model="chatCtrl.userQueries.bedrooms">
-    <option value="1br">1 bedroom</option>
-    <option value="2br">2 bedrooms</option>
-    <option value="3br">3 bedrooms</option>
-    <option value="4br">4 bedrooms</option>
-    <option value="5br">5 bedrooms</option>
-  </select>
-  <select ng-model="chatCtrl.userQueries.areas">
-    <option value="sylvan-park">Sylvan Park</option>
-    <option value="downtown">Downtown</option>
-    <option value="east-nashville">East Nashville</option>
-    <option value="brentwood">Brentwood</option>
-    <option value="midtown">Midtown</option>
-  </select>
-  <button ng-click="chatCtrl.findHousing()">Find Housing</button>
-  <div id="results-list" ng-show="chatCtrl.results">
-    <h3>Results ({{chatCtrl.results.length}})</h3>
+<div>
+  <div class="match-info">
+    <h3>About {{chatCtrl.match}}</h3>
+    <p>{{chatCtrl.matchInfo.about}}</p>
+    <h4>You and {{chatCtrl.match}} are interested in:<h4>
     <ul>
-      <li ng-repeat="result in chatCtrl.results"><a target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>
+      <li ng-repeat="area in chatCtrl.matchedAreas">{{area}}</li>
     </ul>
   </div>
+  <div class="craigslist-container">
+    <h3>Craigslist Results</h3>
+    <select ng-model="chatCtrl.userQueries.bedrooms">
+      <option value="1br">1 bedroom</option>
+      <option value="2br">2 bedrooms</option>
+      <option value="3br">3 bedrooms</option>
+      <option value="4br">4 bedrooms</option>
+      <option value="5br">5 bedrooms</option>
+    </select>
+    <select ng-model="chatCtrl.userQueries.areas">
+      <option value="sylvan-park">Sylvan Park</option>
+      <option value="downtown">Downtown</option>
+      <option value="east-nashville">East Nashville</option>
+      <option value="brentwood">Brentwood</option>
+      <option value="midtown">Midtown</option>
+    </select>
+    <button ng-click="chatCtrl.findHousing()">Find Housing</button>
+    <div id="results-list" ng-show="chatCtrl.results">
+      <h3>Results ({{chatCtrl.results.length}})</h3>
+      <ul>
+        <li ng-repeat="result in chatCtrl.results"><a target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -96,6 +96,24 @@
         'sylvan-park': [37209],
         'east-nashville': [37206],
         'midtown': [37203],
+        'bellevue': [37221],
+        'belle-meade': [37205],
+        'green-hills': [37215],
+        'antioch': [37013],
+        'south-nashville': [37211],
+        'oak-hill': [37220],
+        'percy-priest': [37217],
+        'lafayette': [37210],
+        '12-south': [37204],
+        'hillsboro-village': [37212],
+        'germantown': [37208],
+        'east-riverfront': [37213],
+        'donelson': [37214],
+        'hermitage': [37076],
+        'madison': [37115],
+        'inglewood': [37216],
+        'whites-creek': [37189],
+        'bordeaux': [37218],
       }
 
       vm.findHousing = function(){
@@ -156,7 +174,32 @@
     .controller('EditController', function(profileFactory){
       var vm = this;
       
-      vm.areas = ["East Nashville", "Sylvan Park", "Sylvan Heights", "Brentwood", "Inglewood", "West End", "Downtown"];
+      vm.areas = [
+        "All Areas",
+        "Bellevue",
+        "West Nashville (Belle Meade)",
+        "Green Hills",
+        "Brentwood",
+        "Antioch",
+        "South Nashville",
+        "Oak Hill",
+        "West Nashville (Sylvan Park)",
+        "Percy Priest/Nashboro Village",
+        "Lafayette",
+        "12 South/Berry Hill",
+        "Hillsboro Village",
+        "Midtown",
+        "Germantown",
+        "Downtown",
+        "East Riverfront",
+        "Donelson",
+        "East Nashville",
+        "Hermitage",
+        "Madison",
+        "Inglewood",
+        "Whites Creek",
+        "Bordeaux"
+      ];
 
       profileFactory.getUserInfo(function(data){
         vm.user = data;

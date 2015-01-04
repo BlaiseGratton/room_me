@@ -48,8 +48,6 @@
       vm.findMatches = function(userId){
         vm.matches = [];
         for (var key in vm.user_list) {
-          console.log(vm.user_list[key]);
-          console.log(vm.user);
           if (key !== userId) {
             var quesDiff = [];
             quesDiff.push(Math.abs((vm.user.quiz.ques1 - vm.user_list[key].quiz.ques1) / 10));
@@ -155,6 +153,18 @@
         });
         vm.userQueries.areas = vm.matchedAreas;
       }
+     
+      vm.savedResults = [];
+
+      vm.listingsRef = new Firebase('https://roommate-finder.firebaseio.com/chats/listings/' + vm.chatId);
+
+      vm.saveListing = function(result){
+        vm.listingsRef.push({url: result.external_url, heading: result.heading});
+      };
+
+      vm.listingsRef.on('child_added', function(snapshot){
+        vm.savedResults.push(snapshot.val());
+      });
 
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
 
@@ -174,9 +184,9 @@
         }
       });
 
-      vm.messagesRef.limitToLast(10).on('child_added', function (snapshot) {
+      vm.messagesRef.limitToLast(10).on('child_added', function(snapshot){
         vm.data = snapshot.val();
-        vm.username = vm.data.name || "anonymous";
+        vm.username = vm.data.name;
         vm.message = vm.data.text;
 
         vm.messageElement = $("<li>");

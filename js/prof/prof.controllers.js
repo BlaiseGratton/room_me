@@ -75,16 +75,17 @@
       var vm = this;
       vm.chatId = $location.$$path.slice(7);
      
-      profileFactory.getHousing(function(data){
-        vm.housing = data;
-        console.log(vm.housing);
-      });
+    //  profileFactory.getHousing(function(data){
+    //    vm.housing = data;
+    //    console.log(vm.housing);
+    //  });
       
       vm.userQueries = {
         bedrooms: "2br",
         areas: ['-Select an area-'],
       };
 
+      vm.anchorLength = '-Select a time range-';
 
       vm.areaZipcodes = {
         'Downtown': [37201, 37219],
@@ -111,17 +112,31 @@
         'Whites Creek': [37189],
         'Bordeaux': [37218],
       };
+     
+      profileFactory.getAnchor(function(data){
+        vm.anchor = data.anchor;
+        profileFactory.getHousing(vm.anchor - 2630000, function(data){
+          vm.housing = data;
+          console.log(vm.housing);
+        });
+      });
       
       vm.findHousing = function(){
         vm.results = [];
         vm.housing.postings.forEach(function(listing){
-          if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
-            var zips = vm.areaZipcodes[vm.userQueries.area];
-            zips.forEach(function(zip){
-              if (listing.location.zipcode.indexOf(zip) !== -1){
-                vm.results.push(listing);
-              }
-            });
+          console.log(listing.timestamp);
+          var date = new Date().getTime();
+          date = parseInt((date - vm.anchorLength).toString().slice(0, 10));
+          console.log(date);
+          if (listing.timestamp <= parseInt((date - vm.anchorLength).toString().slice(0, 10))){
+            if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
+              var zips = vm.areaZipcodes[vm.userQueries.area];
+              zips.forEach(function(zip){
+                if (listing.location.zipcode.indexOf(zip) !== -1){
+                  vm.results.push(listing);
+                }
+              });
+            }
           }
         });
       };

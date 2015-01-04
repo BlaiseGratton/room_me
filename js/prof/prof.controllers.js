@@ -122,18 +122,17 @@
       });
       
       vm.findHousing = function(){
+        var date = (new Date().getTime()).toString().slice(0, 10);
+        console.log(date - vm.anchorLength);
         vm.results = [];
         vm.housing.postings.forEach(function(listing){
-          console.log(listing.timestamp);
-          var date = new Date().getTime();
-          date = parseInt((date - vm.anchorLength).toString().slice(0, 10));
-          console.log(date);
-          if (listing.timestamp <= parseInt((date - vm.anchorLength).toString().slice(0, 10))){
+          if (listing.timestamp > date - vm.anchorLength){
             if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
               var zips = vm.areaZipcodes[vm.userQueries.area];
               zips.forEach(function(zip){
                 if (listing.location.zipcode.indexOf(zip) !== -1){
                   vm.results.push(listing);
+                  console.log(listing.timestamp);
                 }
               });
             }

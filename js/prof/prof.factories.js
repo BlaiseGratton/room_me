@@ -60,7 +60,7 @@
 
       function getHousing(anchor, cb){
         console.log(anchor);
-        $http.get('https://polling.3taps.com/poll?auth_token=f4bd5054960b9e9319c7d844dccc1682&anchor=' + anchor + '&location.city=usa-nas-nas&category=RHFR|RSUB|RSWP')
+        $http.get('https://polling.3taps.com/poll?auth_token=f4bd5054960b9e9319c7d844dccc1682&anchor=' + anchor + '&location.city=usa-nas-nas&category=RHFR|RSUB')
           .success(function(data){
             cb(data);
           })

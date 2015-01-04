@@ -71,7 +71,7 @@
       }
 
     })
-    .controller('ChatController', function(profileFactory, $http, $location, $rootScope){
+    .controller('ChatController', function(profileFactory, $http, $scope, $location, $rootScope){
       var vm = this;
       vm.chatId = $location.$$path.slice(7);
      
@@ -153,7 +153,11 @@
         });
         vm.userQueries.areas = vm.matchedAreas;
       }
-     
+      
+      vm.removeListing = function(listingId){
+        vm.listingsRef.child(listingId).remove();
+      };
+
       vm.savedResults = [];
 
       vm.listingsRef = new Firebase('https://roommate-finder.firebaseio.com/chats/listings/' + vm.chatId);
@@ -162,8 +166,8 @@
         vm.listingsRef.push({url: result.external_url, heading: result.heading});
       };
 
-      vm.listingsRef.on('child_added', function(snapshot){
-        vm.savedResults.push(snapshot.val());
+      vm.listingsRef.on('value', function(snapshot){
+        vm.savedResults = snapshot.val();
       });
 
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);

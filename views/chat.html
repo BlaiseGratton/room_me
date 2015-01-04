@@ -11,7 +11,7 @@
   <div class="saved-posts">
     <h3>Saved Posts</h3>
     <ul ng-model="chatCtrl.savedResults">
-      <li ng-repeat="listing in chatCtrl.savedResults"><a target="_blank" ng-href="{{listing.url}}">{{listing.heading}}</a></li>
+      <li ng-repeat="(listingId, listing) in chatCtrl.savedResults"><button ng-click="chatCtrl.removeListing(listingId)">Remove</button><a target="_blank" ng-href="{{listing.url}}">{{listing.heading}}</a></li>
     </ul>
   </div>
 </div>

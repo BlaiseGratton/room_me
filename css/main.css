@@ -1,13 +1,24 @@
-.slider {
-  max-width: 500px;
+/******************************************************
+ *    COLORS
+ ******************************************************/
+
+ul {
+  color: #50C28C;
 }
+
+
+
+/******************************************************
+ *   HEADER / NAV BAR
+ ******************************************************/
 
 .logo {
   display: inline-block;
 }
 
-ul {
-  list-style: none;
+.logo img {
+  max-height: 200px;
+  max-width: 500px;
 }
 
 #nav {
@@ -19,6 +30,25 @@ ul {
   display: inline-block;
   margin-left: 40px;
 }
+
+
+
+
+
+
+
+
+
+
+.slider {
+  max-width: 500px;
+}
+
+
+ul {
+  list-style: none;
+}
+
 
 body {
   max-width: 800px;

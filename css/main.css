@@ -2,21 +2,28 @@
  *    COLORS
  ******************************************************/
 
-ul {
-  color: #50C28C;
-}
+/*      mint green: #50C28C;
 
+/*      footer grey: #384047;
 
 
 /******************************************************
  *   HEADER / NAV BAR
  ******************************************************/
 
+header {
+  border-bottom: solid 1px black;
+  background-color: #50C28C;
+}
+
 .logo {
   display: inline-block;
+  margin-bottom: -42px;
 }
 
 .logo img {
+  position: relative;
+  top: -28px;
   max-height: 200px;
   max-width: 500px;
 }
@@ -31,9 +38,22 @@ ul {
   margin-left: 40px;
 }
 
+/*****************************************************
+ *    FOOTER
+ *****************************************************/
 
+footer {
+  background-color: #384047;
+  height: 90px;
+}
 
+#footer-nav {
+  margin-bottom: 0;
+}
 
+#footer-nav li {
+  display: inline-block;
+}
 
 
 

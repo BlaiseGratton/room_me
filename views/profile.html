@@ -1,13 +1,15 @@
-
-<h3>Profile</h3>
-
-<ul>
-  <li><em>Username:</em> {{profCtrl.user.info.username}} </li>
-  <li><em>About:</em> {{profCtrl.user.info.about}} </li>
-  <li><em>Area(s) Desired:</em>
+<div class="profile-page">
+  <h3>Profile</h3>
+  <a href="/#/prof/edit">Edit Info</a>
+  <br>
+  <div class="prof-info">
+    <h4><em>Username:</em></h4><p>{{profCtrl.user.info.username}}</p>
+    <h4><em>About:</em></h4><p>{{profCtrl.user.info.about}}</p>
+  </div>
+  <div class="desired-areas">
+    <h4><em>Area(s) Desired:</em></h4>
     <ul>
       <li ng-repeat="area in profCtrl.user.info.areas">{{area}}</li>
     </ul>
-  </li>
-</ul>
-<a href="/#/prof/edit">Edit Info</a>
+  </div>
+</div>

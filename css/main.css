@@ -48,11 +48,13 @@ header {
 .navbar {
   top: 57px;
   right: 241px;
+  border: 2px solid transparent;
 }
 
 .navbar-default {
   display: inline-block;
   float: right;
+  border-color: #74cf8f;
 }
 
 .navbar-right {
@@ -95,9 +97,40 @@ footer {
   text-align: center;
 }
 
+/*****************************************************
+ *    PROFILE
+ *****************************************************/
 
+.profile-page a, h4 {
+  display: inline-block;
+}
 
+.profile-page {
+  margin-top: 48px;
+}
 
+.profile-page a {
+  margin-left: 20px;
+  color: #50C28C;
+}
+
+.profile-page p {
+  padding-left: 40px;
+}
+
+.prof-info {
+  display: inline-block;
+}
+
+.desired-areas {
+  float: right;
+  display: inline-block;
+  width: 50%;
+}
+
+/*****************************************************
+ *    
+ *****************************************************/
 
 
 .slider {

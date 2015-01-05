@@ -17,6 +17,11 @@ html, body {
   height: 100%;
 }
 
+body {
+  max-width: 800px;
+  margin: auto;
+}
+
 .view-content {
   min-height: 65%;
 }
@@ -80,6 +85,7 @@ footer {
   height: 90px;
   margin: 0 -240px;
   padding: 0 -240px;
+  clear: both;
 }
 
 #footer-nav {
@@ -101,16 +107,16 @@ footer {
  *    PROFILE
  *****************************************************/
 
-.profile-page a, h4 {
+.profile-page a, h3 {
   display: inline-block;
 }
 
-.profile-page {
+.profile-page h4 {
   margin-top: 48px;
 }
 
 .profile-page a {
-  margin-left: 20px;
+  margin-left: 112px;
   color: #50C28C;
 }
 
@@ -129,8 +135,53 @@ footer {
 }
 
 /*****************************************************
- *    
+ *   EDIT PROFILE 
  *****************************************************/
+
+.shorten {
+  max-width: 282px;
+}
+
+.edit-profile h4 {
+  margin-top: 48px;
+}
+
+.edit-profile input, textarea {
+  margin-left: 40px;
+}
+
+textarea {
+  min-height: 200px;
+}
+
+.edit-profile .checkbox {
+  display: inline-block;
+}
+
+.area-input div {
+  height: 100%;
+  margin-left: 40px;
+}
+
+.area-input input, label {
+  margin: 0;
+  font-weight: 400;
+}
+
+.left-wrapper, .area-input {
+  padding: 0;
+}
+
+/*****************************************************
+ *   
+ *****************************************************/
+
+
+
+
+
+
+
 
 
 .slider {
@@ -143,10 +194,6 @@ ul {
 }
 
 
-body {
-  max-width: 800px;
-  margin: auto;
-}
 
 li.chatting::before {
   background-color: #7cbc3c;
@@ -166,15 +213,12 @@ li.chatting::before {
   line-height: 27px;
 }
 
-#area-input label {
+.area-input label {
   display: block;
   padding-right: 10px;
   white-space: nowrap;
 }
 
-#area-input div {
-  height: 100%;
-}
 
 .chat-container {
   max-width: 50%;

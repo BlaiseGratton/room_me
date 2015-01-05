@@ -5,6 +5,8 @@
 /*      mint green: #50C28C;
 
 /*      footer grey: #384047;
+ 
+/*      grey text: #8e959b;
 
 
 /******************************************************
@@ -26,6 +28,8 @@ html, body {
 header {
   border-bottom: solid 1px black;
   background-color: #50C28C;
+  margin: 0 -240px 10px;
+  padding: 0 -240px;
 }
 
 .logo {
@@ -35,19 +39,34 @@ header {
 
 .logo img {
   position: relative;
-  top: -28px;
-  max-height: 200px;
-  max-width: 500px;
+  top: -26px;
+  left: 227px;
+  max-height: 160px;
+  max-width: 300px;
 }
 
-#nav {
+.navbar {
+  top: 57px;
+  right: 241px;
+}
+
+.navbar-default {
   display: inline-block;
   float: right;
 }
 
-#nav li {
-  display: inline-block;
-  margin-left: 40px;
+.navbar-right {
+  margin: auto;
+  width: 100%;
+}
+
+.container-fluid {
+  width: 400px;
+  background-color: #54cf89;
+}
+
+.navbar-nav li {
+  width: 25%;
 }
 
 /*****************************************************
@@ -57,14 +76,23 @@ header {
 footer {
   background-color: #384047;
   height: 90px;
+  margin: 0 -240px;
+  padding: 0 -240px;
 }
 
 #footer-nav {
-  margin-bottom: 0;
+  margin: 10px auto 0;
+  width: 800px;
+  padding: 22px 0 0;
 }
 
 #footer-nav li {
   display: inline-block;
+  color: #8e959b;
+  margin: 0;
+  padding: 0;
+  width: 24%;
+  text-align: center;
 }
 
 

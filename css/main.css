@@ -173,8 +173,45 @@ textarea {
 }
 
 /*****************************************************
- *   
+ *  Chat Page 
  *****************************************************/
+
+.chat-wrapper a {
+  color: #50C28C;
+}
+
+a.listing {
+  color: black;
+  margin: 0 0 0 10px;
+}
+
+.craigslist-container select {
+  background-color: whitesmoke;
+}
+
+.messages strong {
+  margin-right: 10px;
+}
+
+.saved-posts {
+  
+}
+
+.chat-wrapper ul {
+  padding-left: 10px;
+}
+
+.info-search-container {
+  clear: both;
+}
+
+.info-search-container p {
+  margin-left: 10px;
+}
+
+
+
+
 
 
 

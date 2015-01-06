@@ -1,56 +1,54 @@
-<div class="shared-container">
-  <div class="chat-container">
-    <h3>Chat with {{chatCtrl.match}}</h3>
-
-    <ul id='example-messages' class="example-chat-messages"></ul>
-
-    <footer>
+<div class="chat-wrapper">
+  <div class="shared-container">
+    <div class="chat-container">
+      <h3>Chat with {{chatCtrl.match}}</h3>
+      <ul id="messages" class="messages"></ul>
       <input type='text' id='messageInput'  placeholder='Type a message...'>
-    </footer>
-  </div>
-  <div class="saved-posts">
-    <h3>Saved Posts</h3>
-    <ul ng-model="chatCtrl.savedResults">
-      <li ng-repeat="(listingId, listing) in chatCtrl.savedResults"><button ng-click="chatCtrl.removeListing(listingId)">Remove</button><a target="_blank" ng-href="{{listing.url}}">{{listing.heading}}</a></li>
-    </ul>
-  </div>
-</div>
-<div class="info-search-container">
-  <div class="match-info">
-    <h3>About {{chatCtrl.match}}</h3>
-    <p>{{chatCtrl.matchInfo.info.about}}</p>
-    <h4>You and {{chatCtrl.match}} are interested in:<h4>
-    <ul>
-      <li ng-repeat="area in chatCtrl.matchedAreas">{{area}}</li>
-    </ul>
-  </div>
-  <div class="craigslist-container">
-    <h3>Craigslist Results</h3>
-    <select ng-model="chatCtrl.userQueries.bedrooms">
-      <option value="1br">1 bedroom</option>
-      <option value="2br">2 bedrooms</option>
-      <option value="3br">3 bedrooms</option>
-      <option value="4br">4 bedrooms</option>
-      <option value="5br">5 bedrooms</option>
-    </select>
-    <select k-ng-model="chatCtrl.userQueries.areas" id="area-selector" ng-model="chatCtrl.userQueries.area">
-      <option value="" disabled>-Select an area-</option>
-      <option ng-repeat="area in chatCtrl.userQueries.areas" value="{{area}}">{{area}}</option>
-    </select>
-    <select k-ng-model="chatCtrl.anchorLength" ng-model="chatCtrl.anchorLength">
-      <option disabled>-Select a time range-</option>
-      <option ng-value="86400">Past 24 Hours</option>
-      <option ng-value="604800">1 Week Ago</option>
-      <option ng-value="1209600">2 Weeks Ago</option>
-      <option ng-value="1814400">3 Weeks Ago</option>
-      <option ng-value="2629744">1 Month Ago</option>
-    </select>
-    <button ng-click="chatCtrl.findHousing()">Find Housing</button>
-    <div id="results-list" ng-show="chatCtrl.results">
-      <h3>Results ({{chatCtrl.results.length}})</h3>
-      <ul>
-        <li ng-repeat="result in chatCtrl.results"><button ng-click="chatCtrl.saveListing(result)">Save</button><a target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>
+    </div>
+    <div class="saved-posts">
+      <h3>Saved Posts</h3>
+      <ul ng-model="chatCtrl.savedResults">
+        <li ng-repeat="(listingId, listing) in chatCtrl.savedResults"><a href="#" ng-click="chatCtrl.removeListing(listingId)">Remove</a><a class="listing" target="_blank" ng-href="{{listing.url}}">{{listing.heading}}</a></li>
       </ul>
+    </div>
+  </div>
+  <div class="info-search-container">
+    <div class="match-info">
+      <h3>About {{chatCtrl.match}}</h3>
+      <p>{{chatCtrl.matchInfo.info.about}}</p>
+      <h5>You and {{chatCtrl.match}} are interested in:</h5>
+      <ul>
+        <li ng-repeat="area in chatCtrl.matchedAreas">{{area}}</li>
+      </ul>
+    </div>
+    <div class="craigslist-container">
+      <h3>Craigslist Results</h3>
+      <select ng-model="chatCtrl.userQueries.bedrooms">
+        <option value="1br">1 bedroom</option>
+        <option value="2br">2 bedrooms</option>
+        <option value="3br">3 bedrooms</option>
+        <option value="4br">4 bedrooms</option>
+        <option value="5br">5 bedrooms</option>
+      </select>
+      <select k-ng-model="chatCtrl.userQueries.areas" id="area-selector" ng-model="chatCtrl.userQueries.area">
+        <option value="" disabled>-Select an area-</option>
+        <option ng-repeat="area in chatCtrl.userQueries.areas" value="{{area}}">{{area}}</option>
+      </select>
+      <select k-ng-model="chatCtrl.anchorLength" ng-model="chatCtrl.anchorLength">
+        <option disabled>-Select a time range-</option>
+        <option ng-value="86400">Past 24 Hours</option>
+        <option ng-value="604800">1 Week Ago</option>
+        <option ng-value="1209600">2 Weeks Ago</option>
+        <option ng-value="1814400">3 Weeks Ago</option>
+        <option ng-value="2629744">1 Month Ago</option>
+      </select>
+      <button ng-click="chatCtrl.findHousing()">Find Housing</button>
+      <div id="results-list" ng-show="chatCtrl.results">
+        <h4>Results ({{chatCtrl.results.length}})</h4>
+        <ul>
+          <li ng-repeat="result in chatCtrl.results"><a href="#" ng-click="chatCtrl.saveListing(result)">Save</a><a class="listing" target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

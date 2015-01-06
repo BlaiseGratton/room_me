@@ -8,18 +8,30 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header>
+  <header id="header">
     <div class="logo">
-      <h1>Room Me!</h1>
+      <img src="img/room_me_logo_salmon.svg" alt="room_me_logo">
     </div>
-    <ul id="nav">
-      <li><a href="/#/prof">Profile</a></li>
-      <li><a href="/#/prof/quiz">Quiz</a></li>
-      <li><a href="/#/prof/matches">Matches</a></li>
-      <li><a href="/#/logout">Logout</a></li>
-    </ul>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/#/prof">Profile</a></li>
+          <li><a href="/#/prof/quiz">Quiz</a></li>
+          <li><a href="/#/prof/matches">Matches</a></li>
+          <li><a href="/#/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
-  <div ng-view></div>
+  <div ng-view class="view-content"></div>
+  <footer>
+    <ul id="footer-nav">
+      <li>About</li>
+      <li>Privacy</li>
+      <li>License</li>
+      <li>Neighborhood Map</li>
+    </ul>
+  </footer>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

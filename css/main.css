@@ -1,29 +1,236 @@
-.slider {
-  max-width: 500px;
-}
+/******************************************************
+ *    COLORS
+ ******************************************************/
 
-.logo {
-  display: inline-block;
-}
+/*      mint green: #50C28C;
 
-ul {
-  list-style: none;
-}
+/*      footer grey: #384047;
+ 
+/*      grey text: #8e959b;
 
-#nav {
-  display: inline-block;
-  float: right;
-}
 
-#nav li {
-  display: inline-block;
-  margin-left: 40px;
+/******************************************************
+ *    PAGE STRUCTURE
+ *******************************************************/
+
+html, body {
+  height: 100%;
 }
 
 body {
   max-width: 800px;
   margin: auto;
 }
+
+.view-content {
+  min-height: 65%;
+}
+
+/******************************************************
+ *    HEADER / NAV BAR
+ ******************************************************/
+
+header {
+  border-bottom: solid 1px black;
+  background-color: #50C28C;
+  margin: 0 -240px 10px;
+  padding: 0 -240px;
+}
+
+.logo {
+  display: inline-block;
+  margin-bottom: -42px;
+}
+
+.logo img {
+  position: relative;
+  top: -26px;
+  left: 227px;
+  max-height: 160px;
+  max-width: 300px;
+}
+
+.navbar {
+  top: 57px;
+  right: 241px;
+  border: 2px solid transparent;
+}
+
+.navbar-default {
+  display: inline-block;
+  float: right;
+  border-color: #74cf8f;
+}
+
+.navbar-right {
+  margin: auto;
+  width: 100%;
+}
+
+.container-fluid {
+  width: 400px;
+  background-color: #54cf89;
+}
+
+.navbar-nav li {
+  width: 25%;
+}
+
+/*****************************************************
+ *    FOOTER
+ *****************************************************/
+
+footer {
+  background-color: #384047;
+  height: 90px;
+  margin: 0 -240px;
+  padding: 0 -240px;
+  clear: both;
+}
+
+#footer-nav {
+  margin: 10px auto 0;
+  width: 800px;
+  padding: 22px 0 0;
+}
+
+#footer-nav li {
+  display: inline-block;
+  color: #8e959b;
+  margin: 0;
+  padding: 0;
+  width: 24%;
+  text-align: center;
+}
+
+/*****************************************************
+ *    PROFILE
+ *****************************************************/
+
+.profile-page a, h3 {
+  display: inline-block;
+}
+
+.profile-page h4 {
+  margin-top: 48px;
+}
+
+.profile-page a {
+  margin-left: 112px;
+  color: #50C28C;
+}
+
+.profile-page p {
+  padding-left: 40px;
+}
+
+.prof-info {
+  display: inline-block;
+}
+
+.desired-areas {
+  float: right;
+  display: inline-block;
+  width: 50%;
+}
+
+/*****************************************************
+ *   EDIT PROFILE 
+ *****************************************************/
+
+.shorten {
+  max-width: 282px;
+}
+
+.edit-profile h4 {
+  margin-top: 48px;
+}
+
+.edit-profile input, textarea {
+  margin-left: 40px;
+}
+
+textarea {
+  min-height: 200px;
+}
+
+.edit-profile .checkbox {
+  display: inline-block;
+}
+
+.area-input div {
+  height: 100%;
+  margin-left: 40px;
+}
+
+.area-input input, label {
+  margin: 0;
+  font-weight: 400;
+}
+
+.left-wrapper, .area-input {
+  padding: 0;
+}
+
+/*****************************************************
+ *  Chat Page 
+ *****************************************************/
+
+.chat-wrapper a {
+  color: #50C28C;
+}
+
+a.listing {
+  color: black;
+  margin: 0 0 0 10px;
+}
+
+.craigslist-container select {
+  background-color: whitesmoke;
+}
+
+.messages strong {
+  margin-right: 10px;
+}
+
+.saved-posts {
+  
+}
+
+.chat-wrapper ul {
+  padding-left: 10px;
+}
+
+.info-search-container {
+  clear: both;
+}
+
+.info-search-container p {
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slider {
+  max-width: 500px;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
 
 li.chatting::before {
   background-color: #7cbc3c;
@@ -43,15 +250,12 @@ li.chatting::before {
   line-height: 27px;
 }
 
-#area-input label {
+.area-input label {
   display: block;
   padding-right: 10px;
   white-space: nowrap;
 }
 
-#area-input div {
-  height: 100%;
-}
 
 .chat-container {
   max-width: 50%;

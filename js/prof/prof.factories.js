@@ -49,7 +49,9 @@
       }
       
       function getAnchor(cb){
-        $http.get('https://polling.3taps.com/poll?auth_token=f4bd5054960b9e9319c7d844dccc1682')
+        var timestamp = new Date().getTime() - 263000000;
+        timestamp = timestamp.toString().slice(0, 10);
+        $http.get('https://polling.3taps.com/anchor?auth_token=f4bd5054960b9e9319c7d844dccc1682&timestamp=' + timestamp)
           .success(function(data){
             cb(data);
           })
@@ -87,6 +89,7 @@
           .error(function(err){
             console.log(err);
           });
+
         $http.put(FIREBASE_URL + '/user_list/' + profile.username + '/info.json?auth=' + $rootScope.user.token, profile)
           .success(function(data){
             
@@ -94,6 +97,8 @@
           .error(function(err){
             console.log(err);
           });
+
+        $location.path('/prof');
       }
 
       function setQuizResults(results, user, cb) {

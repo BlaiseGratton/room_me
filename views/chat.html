@@ -22,7 +22,10 @@
       </ul>
     </div>
     <div class="craigslist-container">
-      <h3>Craigslist Results</h3>
+      <div>
+        <h3>Craigslist Results</h3>
+        <button class="btn btn-link" ng-click="chatCtrl.findHousing()">Find Housing</button>
+      </div>
       <select ng-model="chatCtrl.userQueries.bedrooms">
         <option value="1br">1 bedroom</option>
         <option value="2br">2 bedrooms</option>
@@ -42,7 +45,6 @@
         <option ng-value="1814400">3 Weeks Ago</option>
         <option ng-value="2629744">1 Month Ago</option>
       </select>
-      <button ng-click="chatCtrl.findHousing()">Find Housing</button>
       <div id="results-list" ng-show="chatCtrl.results">
         <h4>Results ({{chatCtrl.results.length}})</h4>
         <ul>

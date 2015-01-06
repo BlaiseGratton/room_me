@@ -1,5 +1,6 @@
-</div>
+<div class="quiz-wrapper">
   <h3>Survey</h3>
+  <button class="btn btn-link" ng-click="quizCtrl.setQuizResults()">Save</button>
   <ul>
     <li>How neat of a person are you?</li>
     <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques1"></slider>
@@ -26,5 +27,4 @@
     <li>Do you mind smoking?</li>
     <li><input type="radio" ng-model="quizCtrl.user.quiz.ques12" value="yes" name="ques12"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques12" value="no" name="ques12"> No </li>
   </ul>
-  <button ng-click="quizCtrl.setQuizResults()">Save</button>
 </div>

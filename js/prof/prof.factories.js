@@ -84,7 +84,7 @@
       function submitProfile(profile){
         $http.put(FIREBASE_URL + '/users/' + $rootScope.user.uid + '/info.json?auth=' + $rootScope.user.token, profile)
           .success(function(data){
-            
+            $location.path('/prof');
           })
           .error(function(err){
             console.log(err);
@@ -98,7 +98,6 @@
             console.log(err);
           });
 
-        $location.path('/prof');
       }
 
       function setQuizResults(results, user, cb) {

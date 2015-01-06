@@ -49,6 +49,34 @@
         vm.matches = [];
         for (var key in vm.user_list) {
           if (key !== userId) {
+            var match = vm.user_list[key];
+            var user = vm.user;
+            if (user.quiz.ques12 === match.quiz.ques12 || match.quiz.ques13 === "no" || match.quiz.ques13 === "yes" && user.quiz.ques12 === "no" || user.quiz.ques13 === "yes" && match.quiz.ques12 === "no"){
+              if (match.quiz.ques11 === "yes" || match.quiz.ques11 === "no" && user.quiz.ques10 === "no" || match.quiz.ques10 === "no" && user.quiz.ques11 === "no" ){
+                if (match.quiz.ques9 === "no" && match.quiz.ques8 === user.quiz.ques8 || user.quiz.ques9 === "no" && match.quiz.ques8 === user.quiz.ques8 || match.quiz.ques9 === "yes" && user.quiz.ques9 === "yes" || match.quiz.ques8 === user.quiz.ques8){
+                  var quesDiff = [];
+                  quesDiff.push(Math.abs((user.quiz.ques7 - match.quiz.ques7) / 10));
+                  quesDiff.push(Math.abs((user.quiz.ques6 - match.quiz.ques5) / 10));
+                  quesDiff.push(Math.abs(((10 - user.quiz.ques4) - match.quiz.ques3) / 10));
+                  quesDiff.push(Math.abs((user.quiz.ques2 - match.quiz.ques1) / 10));
+                  var avgDiff = (quesDiff.reduce(function(prev, cur) {
+                    return prev + cur;
+                  })) / 4;
+                  if (avgDiff <= (100-vm.tightness)/100){
+                    vm.matches.push(match);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      
+      /*vm.findMatches = function(userId){
+        vm.matches = [];
+        for (var key in vm.user_list) {
+          if (key !== userId) {
             var quesDiff = [];
             quesDiff.push(Math.abs((vm.user.quiz.ques1 - vm.user_list[key].quiz.ques1) / 10));
             quesDiff.push(Math.abs((vm.user.quiz.ques2 - vm.user_list[key].quiz.ques2) / 10));
@@ -64,7 +92,7 @@
             }
           }
         }
-      };
+      };*/
 
       vm.openChat = function(username){
         profileFactory.openChat(vm.user.info.username, username);

@@ -13,6 +13,14 @@
  *    PAGE STRUCTURE
  *******************************************************/
 
+a {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
 html, body {
   height: 100%;
 }
@@ -104,7 +112,7 @@ footer {
 }
 
 /*****************************************************
- *    PROFILE
+ *    PROFILE PAGE
  *****************************************************/
 
 .profile-page a, h3 {
@@ -122,6 +130,7 @@ footer {
 
 .profile-page p {
   padding-left: 40px;
+  max-width: 386px;
 }
 
 .prof-info {
@@ -135,7 +144,7 @@ footer {
 }
 
 /*****************************************************
- *   EDIT PROFILE 
+ *   EDIT PROFILE PAGE
  *****************************************************/
 
 .shorten {
@@ -144,6 +153,11 @@ footer {
 
 .edit-profile h4 {
   margin-top: 48px;
+}
+
+.edit-profile .btn {
+  color: #50C28C;
+  margin-left: 55px;
 }
 
 .edit-profile input, textarea {
@@ -163,6 +177,10 @@ textarea {
   margin-left: 40px;
 }
 
+.area-input {
+  margin-top: 58px;
+}
+
 .area-input input, label {
   margin: 0;
   font-weight: 400;
@@ -173,7 +191,7 @@ textarea {
 }
 
 /*****************************************************
- *  Chat Page 
+ *  CHAT PAGE
  *****************************************************/
 
 .chat-wrapper a {
@@ -187,14 +205,28 @@ a.listing {
 
 .craigslist-container select {
   background-color: whitesmoke;
+  overflow: scroll;
+  max-height: 300px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.craigslist-container button {
+  margin: 0 0 0px 45px;
 }
 
 .messages strong {
   margin-right: 10px;
 }
 
-.saved-posts {
-  
+.messages {
+  overflow: scroll;
+  max-height: 200px;
+}
+
+.saved-posts ul {
+  overflow: scroll;
+  max-height: 200px;
 }
 
 .chat-wrapper ul {
@@ -205,10 +237,53 @@ a.listing {
   clear: both;
 }
 
+.match-info p {
+  max-width: 314px;
+}
+
 .info-search-container p {
   margin-left: 10px;
 }
 
+.chat-container {
+  max-width: 50%;
+  display: inline-block;
+}
+
+.saved-posts {
+  width: 50%;
+  display: inline-block;
+  float: right;
+}
+
+.match-info {
+  max-width: 50%;
+  display: inline-block;
+}
+
+.craigslist-container {
+  width: 50%;
+  display: inline-block;
+  float: right;
+}
+
+.craigslist-container .btn {
+  color: #50C28C;
+  margin: 0 0 8px 55px;
+}
+
+/*****************************************************
+ *    QUIZ PAGE
+ *****************************************************/
+
+.quiz-wrapper .btn {
+  color: #50C28C;
+  margin-left: 30px;
+}
+
+.quiz-wrapper .slider {
+  max-width: 400px;
+}
 
 
 
@@ -216,21 +291,17 @@ a.listing {
 
 
 
+/*****************************************************
+ *    MATCHES PAGE
+ *****************************************************/
 
-
-
-
-
-.slider {
+.matches-wrapper .slider {
   max-width: 500px;
 }
 
-
-ul {
-  list-style: none;
+.matches-wrapper a {
+  color: black;
 }
-
-
 
 li.chatting::before {
   background-color: #7cbc3c;
@@ -254,30 +325,6 @@ li.chatting::before {
   display: block;
   padding-right: 10px;
   white-space: nowrap;
-}
-
-
-.chat-container {
-  max-width: 50%;
-  display: inline-block;
-}
-
-.saved-posts {
-  width: 50%;
-  display: inline-block;
-  float: right;
-}
-
-
-.match-info {
-  max-width: 50%;
-  display: inline-block;
-}
-
-.craigslist-container {
-  width: 50%;
-  display: inline-block;
-  float: right;
 }
 
 /***************************************************************************

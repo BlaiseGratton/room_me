@@ -1,8 +1,8 @@
 <div class="edit-profile">
-  <h3>Edit Profile</h3>
   <form name="editProfile" ng-submit="profCtrl.submitProfile()" novalidate>
-    <input for="editProfile" type="submit" value="Save">
     <div class="left-wrapper col-xs-6">
+      <h3>Edit Profile</h3>
+      <input class="btn btn-link" for="editProfile" type="submit" value="Save">
       <div class="form-group username-input">
         <label><h4><em>Username:</em></h4></label>
         <input class="form-control shorten" type="text" ng-model="profCtrl.user.info.username" required>

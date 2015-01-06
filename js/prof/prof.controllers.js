@@ -58,7 +58,11 @@
                   quesDiff.push(Math.abs((user.quiz.ques7 - match.quiz.ques7) / 10));
                   quesDiff.push(Math.abs((user.quiz.ques6 - match.quiz.ques5) / 10));
                   quesDiff.push(Math.abs(((10 - user.quiz.ques4) - match.quiz.ques3) / 10));
-                  quesDiff.push(Math.abs((user.quiz.ques2 - match.quiz.ques1) / 10));
+                  if (user.quiz.ques2 < match.quiz.ques1){
+                    quesDiff.push(0);
+                  } else {
+                    quesDiff.push(Math.abs((user.quiz.ques2 - match.quiz.ques1) / 10));
+                  }
                   var avgDiff = (quesDiff.reduce(function(prev, cur) {
                     return prev + cur;
                   })) / 4;
@@ -71,28 +75,6 @@
           }
         }
       }
-      
-      
-      /*vm.findMatches = function(userId){
-        vm.matches = [];
-        for (var key in vm.user_list) {
-          if (key !== userId) {
-            var quesDiff = [];
-            quesDiff.push(Math.abs((vm.user.quiz.ques1 - vm.user_list[key].quiz.ques1) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques2 - vm.user_list[key].quiz.ques2) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques3 - vm.user_list[key].quiz.ques3) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques4 - vm.user_list[key].quiz.ques4) / 10));
-            quesDiff.push(Math.abs((vm.user.quiz.ques5 - vm.user_list[key].quiz.ques5) / 10));
-            var avgDiff = (quesDiff.reduce(function(prev, cur) {
-              return prev + cur;
-            })) / 5;
-            if (avgDiff <= (100-vm.tightness)/100) {
-              var match = vm.user_list[key];
-              vm.matches.push(match);
-            }
-          }
-        }
-      };*/
 
       vm.openChat = function(username){
         profileFactory.openChat(vm.user.info.username, username);

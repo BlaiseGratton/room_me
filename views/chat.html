@@ -8,7 +8,7 @@
     <div class="saved-posts">
       <h3>Saved Posts</h3>
       <ul ng-model="chatCtrl.savedResults">
-        <li ng-repeat="(listingId, listing) in chatCtrl.savedResults"><a href="#" ng-click="chatCtrl.removeListing(listingId)">Remove</a><a class="listing" target="_blank" ng-href="{{listing.url}}">{{listing.heading}}</a></li>
+        <li ng-repeat="(listingId, listing) in chatCtrl.savedResults"><a ng-click="chatCtrl.removeListing(listingId)">Remove</a><a class="listing" target="_blank" ng-href="{{listing.url}}">{{listing.heading}}</a></li>
       </ul>
     </div>
   </div>
@@ -46,7 +46,7 @@
       <div id="results-list" ng-show="chatCtrl.results">
         <h4>Results ({{chatCtrl.results.length}})</h4>
         <ul>
-          <li ng-repeat="result in chatCtrl.results"><a href="#" ng-click="chatCtrl.saveListing(result)">Save</a><a class="listing" target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>
+          <li ng-repeat="result in chatCtrl.results"><a ng-click="chatCtrl.saveListing(result)">Save</a><a class="listing" target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>
         </ul>
       </div>
     </div>

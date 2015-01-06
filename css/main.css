@@ -13,6 +13,10 @@
  *    PAGE STRUCTURE
  *******************************************************/
 
+a {
+  cursor: pointer;
+}
+
 html, body {
   height: 100%;
 }
@@ -187,14 +191,22 @@ a.listing {
 
 .craigslist-container select {
   background-color: whitesmoke;
+  overflow: scroll;
+  max-height: 300px;
 }
 
 .messages strong {
   margin-right: 10px;
 }
 
-.saved-posts {
-  
+.messages {
+  overflow: scroll;
+  max-height: 200px;
+}
+
+.saved-posts ul {
+  overflow: scroll;
+  max-height: 200px;
 }
 
 .chat-wrapper ul {

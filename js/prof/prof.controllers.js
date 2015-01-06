@@ -114,8 +114,9 @@
       };
      
       profileFactory.getAnchor(function(data){
+        console.log(data);
         vm.anchor = data.anchor;
-        profileFactory.getHousing(vm.anchor - 2630000, function(data){
+        profileFactory.getHousing(vm.anchor, function(data){
           vm.housing = data;
           console.log(vm.housing);
         });
@@ -191,7 +192,7 @@
      */
 
       vm.messageField = $('#messageInput');
-      vm.messageList = $('#example-messages');
+      vm.messageList = $('#messages');
 
       vm.messageField.keypress(function (e) {
         if (vm.messageField.val() !== '' && e.keyCode == 13) {
@@ -202,7 +203,7 @@
         }
       });
 
-      vm.messagesRef.limitToLast(10).on('child_added', function(snapshot){
+      vm.messagesRef.on('child_added', function(snapshot){
         vm.data = snapshot.val();
         vm.username = vm.data.name;
         vm.message = vm.data.text;

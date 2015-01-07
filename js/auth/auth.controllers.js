@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('roommateApp')
-    .controller('LoginController', function(authFactory, $scope, $location){
+    .controller('LoginController', function(authFactory, $rootScope, $scope, $location){
       var vm = this;
       
       vm.login = function(){
@@ -23,11 +23,12 @@
       };
       
     })
-    .controller('LogoutController', function($scope, $location, authFactory){
+    .controller('LogoutController', function($scope, $rootScope, $location, authFactory){
       authFactory.logout(function(){
         $location.path('/login');
         $scope.$apply();
       });
+
     })
     .controller('ChangePasswordController', function($scope, authFactory, $location){
       var vm = this;

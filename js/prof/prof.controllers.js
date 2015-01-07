@@ -2,13 +2,13 @@
   'use strict';
 
   angular.module('roommateApp')
-    .controller('ProfileController', function(profileFactory){
+    .controller('ProfileController', function(profileFactory, $rootScope){
       var vm = this;
 
       profileFactory.getUserInfo(function(data){
         vm.user = data;
       });   
-
+      
     }) 
     .controller('MatchController', function(FIREBASE_URL, $http, $rootScope, $scope, profileFactory){
       var vm = this;
@@ -230,7 +230,7 @@
       //end of Firebase Chat example
         
     })
-    .controller('EditController', function(profileFactory){
+    .controller('EditController', function($rootScope, profileFactory){
       var vm = this;
       
       vm.areas = [
@@ -269,7 +269,7 @@
       }
 
     })
-    .controller('QuizController', function(profileFactory){
+    .controller('QuizController', function($rootScope, profileFactory){
       var vm = this;
 
       profileFactory.getUserInfo(function(data){

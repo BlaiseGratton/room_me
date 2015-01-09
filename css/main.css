@@ -112,6 +112,28 @@ footer {
 }
 
 /*****************************************************
+ *    LOGIN
+ *****************************************************/
+
+.login-page {
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.login-page .login {
+  background-color: #50C28C;
+}
+
+.login-page .forgot {
+  background-color: #54cf89;
+}
+
+.login-page .shorten {
+  max-width: 400px;
+}
+
+
+/*****************************************************
  *    PROFILE PAGE
  *****************************************************/
 

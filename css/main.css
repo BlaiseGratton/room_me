@@ -131,6 +131,7 @@ footer {
  *****************************************************/
 
 .login-page, .register-page {
+  padding-top: 86px;
   max-width: 400px;
   margin: 10px auto;
 }
@@ -138,6 +139,9 @@ footer {
 .login-page .login, .register-page .register {
   background-color: #50C28C;
   border-color: #50C28C;
+}
+
+.login-page label, .register-page label {
 }
 
 .login-page .forgot {
@@ -148,6 +152,14 @@ footer {
   max-width: 400px;
 }
 
+.login-page .register-link {
+  padding-top: 13px;
+  text-align: center;
+}
+
+.register-link a {
+  color: #50c28c;
+}
 
 /*****************************************************
  *    PROFILE PAGE

@@ -8,8 +8,10 @@
       <label>Password:</label>
       <input class="shorten form-control" type="password" ng-model="login.password" required>
     </div>
-    <a class="shorten btn btn-default btn-block" href="/#/register">Register</a>
     <input type="submit" class="login shorten btn btn-block" value="Login" ng-class="{disabled: loginForm.$invalid}">
-    <div class="forgot shorten btn btn-block" ng-class="{disabled: !login.email }" ng-click="login.forgotPassword()">Forgot Password?</div>
+    <div class="forgot shorten btn btn-block" ng-class="{disabled: !login.email }" ng-click="login.forgotPassword()">Forgot Password</div>
+    <div class="register-link">
+      <label>Not a user? <a class="register" href="/#/register">Register</a></label>
+    </div>
   </form>
 </div>

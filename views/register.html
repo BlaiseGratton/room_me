@@ -1,18 +1,13 @@
-<form name="registerForm" ng-submit="register.register()" novalidate>
-  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !register.email}">
-    <label>Email Address</label>
-    <input class="form-control" type="email" ng-model="register.email" required>
-  </div>
-  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !register.password}">
-    <label>Password</label>
-    <input class="form-control" type="password" ng-model="register.password" required>
-  </div>
-  <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !register.user}">
-    <label>Create A Username</label>
-    <input class="form-control" type="text" ng-model="register.user" required>
-  </div>
-  <input type="submit" class="btn btn-primary btn-block" value="Register" ng-class="{disabled: registerForm.$invalid}">
-  <div class="btn btn-warning btn-block" ng-class="{disabled: !register.email }" ng-click="register.forgotPassword()">Forgot Password</div>
-</form>
-
-
+<div class="register-page">
+  <form name="registerForm" ng-submit="register.register()" novalidate>
+    <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !register.email}">
+      <label>Email Address:</label>
+      <input class="form-control" type="email" ng-model="register.email" required>
+    </div>
+    <div class="form-group" ng-class="{'has-error': registerForm.$dirty && !register.password}">
+      <label>Password:</label>
+      <input class="form-control" type="password" ng-model="register.password" required>
+    </div>
+    <input type="submit" class="register btn btn-primary btn-block" value="Register" ng-class="{disabled: registerForm.$invalid}">
+  </form>
+</div>

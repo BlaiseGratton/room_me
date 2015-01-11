@@ -127,16 +127,17 @@ footer {
 }
 
 /*****************************************************
- *    LOGIN
+ *    LOGIN/REGISTER
  *****************************************************/
 
-.login-page {
+.login-page, .register-page {
   max-width: 400px;
   margin: 10px auto;
 }
 
-.login-page .login {
+.login-page .login, .register-page .register {
   background-color: #50C28C;
+  border-color: #50C28C;
 }
 
 .login-page .forgot {

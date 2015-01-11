@@ -76,6 +76,7 @@
             if (error === null) {
               console.log('User created successfully', authData);
               cb();
+              $location.path('/prof/edit');
             } else {
               console.log('Error creating user:', error);
             }

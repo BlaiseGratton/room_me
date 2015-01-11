@@ -21,17 +21,25 @@ ul {
   list-style: none;
 }
 
-html, body {
+html {
   height: 100%;
 }
 
 body {
   max-width: 800px;
   margin: auto;
+  min-height: 100%;
+  position: relative;
+}
+
+body:after {
+  content: '';
+  display: block;
+  height: 100px;
 }
 
 .view-content {
-  min-height: 65%;
+  min-height: 80%;
 }
 
 /******************************************************
@@ -90,10 +98,11 @@ header {
 
 footer {
   background-color: #384047;
-  height: 90px;
-  margin: 0 -240px;
-  padding: 0 -240px;
-  clear: both;
+  height: 100px;
+  margin: 0 -270px;
+  padding: 0 270px;
+  position: absolute;
+  bottom: 0;
 }
 
 #footer-nav {

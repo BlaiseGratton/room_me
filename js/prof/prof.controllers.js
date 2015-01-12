@@ -95,10 +95,10 @@
         areas: ['-Select an area-'],
       };
 
-      vm.anchorLength = '-Select a time range-';
+      vm.timestamp = '-Select a time range-';
 
       vm.areaZipcodes = {
-        'Downtown': [37201, 37219],
+        'Downtown': "37201|37219",
         'Brentwood': [37027],
         'Sylvan Park': [37209],
         'East Nashville': [37206],
@@ -123,19 +123,22 @@
         'Bordeaux': [37218],
       };
      
-      profileFactory.getAnchor(function(data){
-        console.log(data);
-        vm.anchor = data.anchor;
-        profileFactory.getHousing(vm.anchor, function(data){
-          vm.housing = data;
-          console.log(vm.housing);
-        });
-      });
-      
       vm.findHousing = function(){
-        var date = (new Date().getTime()).toString().slice(0, 10);
-        console.log(date - vm.anchorLength);
-        vm.results = [];
+        var zip = vm.areaZipcodes[vm.userQueries.area];
+        console.log(vm.timestamp, zip);
+        profileFactory.getHousing(vm.timestamp, zip, function(data){
+          vm.housing = data;
+          console.log(data);
+          vm.results = [];
+          vm.housing.postings.forEach(function(listing){
+            if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
+                  vm.results.push(listing);
+          }
+        });
+
+        });
+        
+   /*   vm.results = [];
         vm.housing.postings.forEach(function(listing){
           if (listing.timestamp > date - vm.anchorLength){
             if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
@@ -143,12 +146,11 @@
               zips.forEach(function(zip){
                 if (listing.location.zipcode.indexOf(zip) !== -1){
                   vm.results.push(listing);
-                  console.log(listing.timestamp);
-                }
-              });
+              //  }
+              // });
             }
           }
-        });
+        });*/
       };
 
       profileFactory.getUserInfo(function(data){

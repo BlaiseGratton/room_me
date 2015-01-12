@@ -48,21 +48,8 @@
         $location.path('/chats/' + chatId);
       }
       
-      function getAnchor(cb){
-        var timestamp = new Date().getTime() - 263000000;
-        timestamp = timestamp.toString().slice(0, 10);
-        $http.get('https://polling.3taps.com/anchor?auth_token=f4bd5054960b9e9319c7d844dccc1682&timestamp=' + timestamp)
-          .success(function(data){
-            cb(data);
-          })
-          .error(function(err){
-            console.log(err);
-          });
-      }
-
-      function getHousing(anchor, cb){
-        console.log(anchor);
-        $http.get('https://polling.3taps.com/poll?auth_token=f4bd5054960b9e9319c7d844dccc1682&anchor=' + anchor + '&location.city=usa-nas-nas&category=RHFR|RSUB')
+      function getHousing(timestamp, zipcode, cb){
+        $http.get('https://search.3taps.com?auth_token=f4bd5054960b9e9319c7d844dccc1682&rpp=100&retvals=annotations,heading,body,external_url&timestamp=' + timestamp + '&location.zipcode=USA-' + zipcode + '&category=RHFR')
           .success(function(data){
             cb(data);
           })
@@ -129,7 +116,6 @@
         getHousing: getHousing,
         getChatUsers: getChatUsers,
         getMatchInfo: getMatchInfo,
-        getAnchor: getAnchor,
       };
     })
 }());

@@ -37,13 +37,13 @@
         <option value="" disabled>-Select an area-</option>
         <option ng-repeat="area in chatCtrl.userQueries.areas" value="{{area}}">{{area}}</option>
       </select>
-      <select k-ng-model="chatCtrl.anchorLength" ng-model="chatCtrl.anchorLength">
-        <option disabled>-Select a time range-</option>
-        <option ng-value="86400">Past 24 Hours</option>
-        <option ng-value="604800">1 Week Ago</option>
-        <option ng-value="1209600">2 Weeks Ago</option>
-        <option ng-value="1814400">3 Weeks Ago</option>
-        <option ng-value="2629744">1 Month Ago</option>
+      <select k-ng-model="chatCtrl.defaultTime" ng-model="chatCtrl.timestamp">
+        <option value="" disabled>-Select a time range-</option>
+        <option value="1d..">Past 24 Hours</option>
+        <option value="7d..1d">1 Week Ago</option>
+        <option value="14d..7d">2 Weeks Ago</option>
+        <option value="21d..14d">3 Weeks Ago</option>
+        <option value="31d..21d">1 Month Ago</option>
       </select>
       <div id="results-list" ng-show="chatCtrl.results">
         <h4>Results ({{chatCtrl.results.length}})</h4>

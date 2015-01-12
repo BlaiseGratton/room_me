@@ -37,8 +37,8 @@
         <option value="" disabled>-Select an area-</option>
         <option ng-repeat="area in chatCtrl.userQueries.areas" value="{{area}}">{{area}}</option>
       </select>
-      <select k-ng-model="chatCtrl.defaultTime" ng-model="chatCtrl.timestamp">
-        <option value="" disabled>-Select a time range-</option>
+      <select k-ng-model="chatCtrl.stamp" ng-model="chatCtrl.timestamp">
+        <option disabled>-Select a time range-</option>
         <option value="1d..">Past 24 Hours</option>
         <option value="7d..1d">1 Week Ago</option>
         <option value="14d..7d">2 Weeks Ago</option>

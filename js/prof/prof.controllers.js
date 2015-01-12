@@ -125,32 +125,16 @@
      
       vm.findHousing = function(){
         var zip = vm.areaZipcodes[vm.userQueries.area];
-        console.log(vm.timestamp, zip);
         profileFactory.getHousing(vm.timestamp, zip, function(data){
           vm.housing = data;
-          console.log(data);
+          console.log(vm.housing);
           vm.results = [];
           vm.housing.postings.forEach(function(listing){
-            if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
-                  vm.results.push(listing);
-          }
-        });
-
-        });
-        
-   /*   vm.results = [];
-        vm.housing.postings.forEach(function(listing){
-          if (listing.timestamp > date - vm.anchorLength){
-            if (listing.annotations.bedrooms === vm.userQueries.bedrooms){
-              var zips = vm.areaZipcodes[vm.userQueries.area];
-              zips.forEach(function(zip){
-                if (listing.location.zipcode.indexOf(zip) !== -1){
-                  vm.results.push(listing);
-              //  }
-              // });
+            if (listing.annotations.bedrooms === vm.userQueries.bedrooms){                
+                vm.results.push(listing);
             }
-          }
-        });*/
+          });
+        });
       };
 
       profileFactory.getUserInfo(function(data){

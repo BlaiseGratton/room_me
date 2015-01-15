@@ -1,32 +1,45 @@
 <div class="quiz-wrapper">
-  <h3>Survey</h3>
-  <button class="btn btn-link" ng-click="quizCtrl.setQuizResults()">Save</button>
-  <ul>
-    <li>How neat of a person are you?</li>
-    <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques1"></slider>
-    <li>Does other peoples' mess bother you?</li>
-    <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques2"></slider>
-    <li>Do you make noise (e.g. music, woodworking) often?</li>
-    <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques3"></slider>
-    <li>Does other peoples' noise bother you or interrupt sleep?</li>
-    <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques4"></slider>
-    <li>How social of a person are you with roommates?</li>
-    <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques5"></slider>
-    <li>How important is it that your roommates are sociable?</li>
-    <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques6"></slider>
-    <li>Do you go out a lot on weekends?</li>
-    <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques7"></slider>
-    <li>What is your gender?</li>
-    <li><input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="female" name="ques8"> Female <input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="male" name="ques8"> Male <input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="Other" name="ques8"> Other </li>
-    <li>Would you live with people of different genders?</li>
-    <li><input type="radio" ng-model="quizCtrl.user.quiz.ques9" value="yes" name="ques9"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques9" value="no" name="ques9"> No </li>
-    <li>Do you have cats or dogs?</li>
-    <li><input type="radio" ng-model="quizCtrl.user.quiz.ques10" value="yes" name="ques10"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques10" value="no" name="ques10"> No </li>
-    <li>Would you live with cats or dogs?</li>
-    <li><input type="radio" ng-model="quizCtrl.user.quiz.ques11" value="yes" name="ques11"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques11" value="no" name="ques11"> No </li>
-    <li>Do you smoke?</li>
-    <li><input type="radio" ng-model="quizCtrl.user.quiz.ques12" value="yes" name="ques12"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques12" value="no" name="ques12"> No </li>
-    <li>Do you mind smoking?</li>
-    <li><input type="radio" ng-model="quizCtrl.user.quiz.ques13" value="yes" name="ques13"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques13" value="no" name="ques13"> No </li>
-  </ul>
+  <h3>Quiz</h3>
+  <div class="quiz-left">
+    <ul>
+      <li>How neat of a person are you?</li>
+      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques1"></slider>
+      <li>Does other peoples' mess bother you?</li>
+      <li><div><p>I'm Oscar the Grouch</p><p>I get by</p><p>It really bothers me</p></div></li>
+      <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques2"></slider>
+      <li>Do you make noise (e.g. music, woodworking) often?</li>
+      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques3"></slider>
+      <li>Does noise bother you or interrupt sleep?</li>
+      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques4"></slider>
+      <li>How social of a person are you with roommates?</li>
+      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques5"></slider>
+      <li>How important is it that your roommates are sociable?</li>
+      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques6"></slider>
+      <li>Do you go out a lot on weekends?</li>
+      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques7"></slider>
+    </ul>
+  </div>
+  <div class="quiz-right">
+    <ul>
+      <li>What is your gender?</li>
+      <li><input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="female" name="ques8"> Female <input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="male" name="ques8"> Male <input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="Other" name="ques8"> Other </li>
+      <li>Would you live with people of different genders?</li>
+      <li><input type="radio" ng-model="quizCtrl.user.quiz.ques9" value="yes" name="ques9"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques9" value="no" name="ques9"> No </li>
+      <li>Do you have cats or dogs?</li>
+      <li><input type="radio" ng-model="quizCtrl.user.quiz.ques10" value="yes" name="ques10"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques10" value="no" name="ques10"> No </li>
+      <li>Would you live with cats or dogs?</li>
+      <li><input type="radio" ng-model="quizCtrl.user.quiz.ques11" value="yes" name="ques11"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques11" value="no" name="ques11"> No </li>
+      <li>Do you smoke?</li>
+      <li><input type="radio" ng-model="quizCtrl.user.quiz.ques12" value="yes" name="ques12"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques12" value="no" name="ques12"> No </li>
+      <li>Do you mind smoking?</li>
+      <li><input type="radio" ng-model="quizCtrl.user.quiz.ques13" value="yes" name="ques13"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques13" value="no" name="ques13"> No </li>
+    </ul>
+    <button class="btn btn-link" ng-click="quizCtrl.setQuizResults()">Save</button>
+  </div>
 </div>

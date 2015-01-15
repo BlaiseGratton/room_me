@@ -357,6 +357,10 @@ a.listing {
  *    QUIZ PAGE
  *****************************************************/
 
+.quiz-wrapper h3 {
+  display: block;
+}
+
 .quiz-wrapper .btn {
   color: #50C28C;
   margin-left: 30px;
@@ -366,11 +370,54 @@ a.listing {
   max-width: 400px;
 }
 
+.quiz-wrapper ul {
+  padding: 0;
+}
 
+.quiz-right {
+  float: right;
+  display: inline-block;
+}
 
+.quiz-left {
+  display: inline-block;
+}
 
+.quiz-right li:nth-child(2n-1) {
+  margin-top: 22px;
+  font-size: 15px;
+}
 
+.quiz-right li:nth-child(2n) {
+  margin-left: 20px;
+}
 
+.quiz-left li:nth-child(3n-2) {
+  font-size: 15px;
+}
+
+.quiz-left li:nth-child(3n-1) div p {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  margin: 0;
+  font-size: 11px;
+}
+
+.quiz-left li:nth-child(3n-1) div p:after {
+  content: '|';
+  position: relative;
+  top: 33px;
+  left: -32px;
+}
+
+.quiz-left li:nth-child(3n):before {
+  content: '|'
+}
+
+.quiz-left li:nth-child(3n-1) div {
+  width: 100%;
+}
 
 /*****************************************************
  *    MATCHES PAGE

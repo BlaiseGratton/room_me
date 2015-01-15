@@ -4,16 +4,16 @@
       <h3>Edit Profile</h3>
       <input class="btn btn-link" for="editProfile" type="submit" value="Save">
       <div class="form-group username-input">
-        <label><h4><em>Username:</em></h4></label>
+        <label><h4>Username:</h4></label>
         <input class="form-control shorten" type="text" ng-model="profCtrl.user.info.username" required>
       </div>
       <div class="form-group about-input">
-        <label><h4><em>About:</em></h4></label>
+        <label><h4>About:</h4></label>
         <textarea class="form-control shorten" ng-model="profCtrl.user.info.about" required></textarea>
       </div>
     </div>
     <div class="form-group area-input col-xs-6">
-      <label id="area-input-label"><h4><em>Area(s) Desired:</em></h4></label>
+      <label id="area-input-label"><h4>Area(s) Desired:</h4></label>
       <div class="form-control">
         <label ng-repeat="area in profCtrl.areas">
           <input type="checkbox" class="checkbox" checklist-value="area" checklist-model="profCtrl.user.info.areas"><span> {{area}}</span>

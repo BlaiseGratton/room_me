@@ -49,11 +49,37 @@ body:after {
 }
 
 /******************************************************
+ *    FONTS
+ *******************************************************/
+
+h3 {
+  font-family: 'Raleway';
+}
+
+h4 {
+  font-family: 'Ubuntu';
+}
+
+a {
+  font-family: 'Raleway';
+}
+
+.navbar a {
+  font-family: 'Raleway';
+  font-size: 18px;
+}
+
+p, li {
+  font-family: 'Ubuntu';
+}
+
+
+
+/******************************************************
  *    HEADER / NAV BAR
  ******************************************************/
 
 header {
-  border-bottom: solid 1px black;
   background-color: #50C28C;
   margin: 0 -240px 10px;
   padding: 0 -240px;
@@ -285,6 +311,11 @@ a.listing {
 
 .info-search-container {
   clear: both;
+  margin-top: 30px;
+}
+
+.info-search-container h5 {
+  margin-top: 42px;
 }
 
 .match-info p {

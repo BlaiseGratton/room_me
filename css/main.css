@@ -38,21 +38,15 @@ body:after {
   height: 100px;
 }
 
-.view-content {
+.view-wrapper {
   height: 100%;
+  width: 100%;
 }
 
-.view-content:after {
+.view-wrapper:after {
   content: '';
   display: block;
   clear: both;
-}
-
-.footer:before {
-  content: '';
-  display: block;
-  clear: both;
-  margin-top: 10px;
 }
 
 /******************************************************
@@ -140,8 +134,7 @@ footer {
 }
 
 footer.footer {
-  position: relative;
-  clear:both;
+  position: absolute;
   bottom: 0;
 }
 

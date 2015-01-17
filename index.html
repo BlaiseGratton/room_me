@@ -9,43 +9,42 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="body-container">
-    <header class="col-xs-12" id="header">
-      <div class="margin col-md-1"></div> 
-      <div class="logo col-sm-3 col-xs-7">
-        <a href="/#/"><img src="img/room_me_logo_salmon.svg" alt="room_me_logo"></a>
-      </div>
-      <div class="navbar-wrapper col-sm-7 col-xs-5"
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
+  <header class="col-xs-12" id="header">
+    <div class="margin col-md-1"></div> 
+    <div class="logo col-sm-3 col-xs-7">
+      <a href="/#/"><img src="img/room_me_logo_salmon.svg" alt="room_me_logo"></a>
+    </div>
+    <div class="navbar-wrapper col-sm-7 col-xs-5"
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="">
             <div class="">
-              <div class="">
-                <ul class="col-xs-10 nav navbar-nav navbar-right" data-toggle="dropdown">
-                  <li class="col-xs-12 col-sm-3"><a href="/#/prof">Profile</a></li>
-                  <li class="col-xs-12 col-sm-3"><a href="/#/prof/quiz">Quiz</a></li>
-                  <li class="col-xs-12 col-sm-3"><a href="/#/prof/matches">Matches</a></li>
-                  <li class="col-xs-12 col-sm-3"><a href="/#/logout">Logout</a></li>
-                </ul>
-              </div>
+              <ul class="col-xs-10 nav navbar-nav navbar-right" data-toggle="dropdown">
+                <li class="col-xs-12 col-sm-3"><a href="/#/prof">Profile</a></li>
+                <li class="col-xs-12 col-sm-3"><a href="/#/prof/quiz">Quiz</a></li>
+                <li class="col-xs-12 col-sm-3"><a href="/#/prof/matches">Matches</a></li>
+                <li class="col-xs-12 col-sm-3"><a href="/#/logout">Logout</a></li>
+              </ul>
             </div>
           </div>
-        </nav>
-      </div>
-      <div class="margin col-md-1"></div> 
-    </header>
+        </div>
+      </nav>
+    </div>
+    <div class="margin col-md-1"></div> 
+  </header>
+  <div class="view-wrapper">
     <div class="margin col-md-1"></div> 
     <div ng-view class="view-content col-md-10 col-xs-12"></div>
-    <footer class="footer col-xs-12">
-      <div class="margin col-md-1"></div> 
-        <ul id="footer-nav col-md-10 col-xs-12">
-          <li>About</li>
-          <li>Privacy</li>
-          <li>License</li>
-          <li>Neighborhood Map</li>
-        </ul>
-      <div class="margin col-md-1"></div> 
-    </footer>
   </div>
+  <footer class="footer col-xs-12">
+    <div class="margin col-md-1"></div> 
+      <ul id="footer-nav col-xs-12 col-md-10">
+        <li>About</li>
+        <li>Privacy</li>
+        <li>License</li>
+        <li>Neighborhood Map</li>
+      </ul>
+  </footer>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

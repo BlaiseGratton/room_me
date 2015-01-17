@@ -26,10 +26,10 @@ html {
 }
 
 body {
-  max-width: 800px;
   margin: auto;
   min-height: 100%;
   position: relative;
+  bottom: 0px;
 }
 
 body:after {
@@ -46,6 +46,13 @@ body:after {
   content: '';
   display: block;
   clear: both;
+}
+
+.footer:before {
+  content: '';
+  display: block;
+  clear: both;
+  margin-top: 10px;
 }
 
 /******************************************************
@@ -81,47 +88,46 @@ p, li {
 
 header {
   background-color: #50C28C;
-  margin: 0 -240px 10px;
-  padding: 0 -240px;
+  height: 100%;
 }
 
-.logo {
+.logo {/*
   display: inline-block;
-  margin-bottom: -42px;
+  margin-bottom: -42px;*/
 }
 
-.logo img {
+.logo img {/*
   position: relative;
   top: -26px;
-  left: 227px;
+  left: 227px;*/
   max-height: 160px;
   max-width: 300px;
 }
 
-.navbar {
+.navbar {/*
   top: 57px;
   right: 241px;
-  border: 2px solid transparent;
+  border: 2px solid transparent;*/
 }
 
-.navbar-default {
+.navbar-default {/*
   display: inline-block;
   float: right;
-  border-color: #74cf8f;
+  border-color: #74cf8f;*/
 }
 
-.navbar-right {
+.navbar-right {/*
   margin: auto;
-  width: 100%;
+  width: 100%;*/
 }
 
-.container-fluid {
+.container-fluid {/*
   width: 400px;
-  background-color: #54cf89;
+  background-color: #54cf89;*/
 }
 
-.navbar-nav li {
-  width: 25%;
+.navbar-nav li {/*
+  width: 25%;*/
 }
 
 /*****************************************************
@@ -131,9 +137,11 @@ header {
 footer {
   background-color: #384047;
   height: 100px;
-  margin: 0 -270px;
-  padding: 0 270px;
-  position: absolute;
+}
+
+footer.footer {
+  position: relative;
+  clear:both;
   bottom: 0;
 }
 
@@ -398,7 +406,6 @@ a.listing {
 
 .quiz-left li:nth-child(3n-1) div p {
   display: inline-block;
-  width: 33%;
   text-align: center;
   margin: 0;
   font-size: 11px;
@@ -417,6 +424,8 @@ a.listing {
 
 .quiz-left li:nth-child(3n-1) div {
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /*****************************************************

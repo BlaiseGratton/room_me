@@ -11,22 +11,18 @@
 <body>
   <header class="col-xs-12" id="header">
     <div class="margin col-md-1"></div> 
-    <div class="logo col-sm-3 col-xs-7">
+    <div class="logo col-md-3 col-sm-3 col-xs-7">
       <a href="/#/"><img src="img/room_me_logo_salmon.svg" alt="room_me_logo"></a>
     </div>
-    <div class="navbar-wrapper col-sm-7 col-xs-5"
+    <div class="navbar-wrapper col-md-7 col-sm-9 col-xs-5"
       <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <div class="">
-            <div class="">
-              <ul class="col-xs-10 nav navbar-nav navbar-right" data-toggle="dropdown">
-                <li class="col-xs-12 col-sm-3"><a href="/#/prof">Profile</a></li>
-                <li class="col-xs-12 col-sm-3"><a href="/#/prof/quiz">Quiz</a></li>
-                <li class="col-xs-12 col-sm-3"><a href="/#/prof/matches">Matches</a></li>
-                <li class="col-xs-12 col-sm-3"><a href="/#/logout">Logout</a></li>
-              </ul>
-            </div>
-          </div>
+          <ul class="col-xs-12 nav navbar-nav navbar-right">
+            <li class="col-xs-12 col-sm-3"><a href="/#/prof">Profile</a></li>
+            <li class="col-xs-12 col-sm-3"><a href="/#/prof/quiz">Quiz</a></li>
+            <li class="col-xs-12 col-sm-3"><a href="/#/prof/matches">Matches</a></li>
+            <li class="col-xs-12 col-sm-3"><a href="/#/logout">Logout</a></li>
+          </ul>
         </div>
       </nav>
     </div>
@@ -37,13 +33,15 @@
     <div ng-view class="view-content col-md-10 col-xs-12"></div>
   </div>
   <footer class="footer col-xs-12">
-    <div class="margin col-md-1"></div> 
-      <ul id="footer-nav col-xs-12 col-md-10">
-        <li>About</li>
-        <li>Privacy</li>
-        <li>License</li>
-        <li>Neighborhood Map</li>
-      </ul>
+    <div class="margin col-md-1"></div>
+      <div class="col-xs-12 col-md-10"> 
+        <ul class="footer-nav col-xs-12">
+          <li class="col-xs-6 col-sm-3">About</li>
+          <li class="col-xs-6 col-sm-3">Privacy</li>
+          <li class="col-xs-6 col-sm-3">License</li>
+          <li class="col-xs-6 col-sm-3">Neighborhood Map</li>
+        </ul>
+      </div>
   </footer>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>

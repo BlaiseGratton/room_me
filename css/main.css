@@ -210,12 +210,6 @@ footer.footer {
   display: inline-block;
 }
 
-.desired-areas {
-  float: right;
-  display: inline-block;
-  width: 50%;
-}
-
 /*****************************************************
  *   EDIT PROFILE PAGE
  *****************************************************/
@@ -248,6 +242,7 @@ textarea {
 .area-input div {
   height: 100%;
   margin-left: 40px;
+  width: 75%;
 }
 
 .area-input {

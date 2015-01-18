@@ -1,12 +1,12 @@
-<div class="profile-page">
+<div class="profile-page col-xs-12">
   <h3>Profile</h3>
   <a href="/#/prof/edit">Edit Info</a>
   <br>
-  <div class="prof-info">
+  <div class="col-xs-12 col-sm-6 prof-info">
     <h4>Username:</h4><p>{{profCtrl.user.info.username}}</p>
     <h4>About:</h4><p>{{profCtrl.user.info.about}}</p>
   </div>
-  <div class="desired-areas">
+  <div class="col-xs-12 col-sm-6 desired-areas">
     <h4>Area(s) Desired:</h4>
     <ul>
       <li ng-repeat="area in profCtrl.user.info.areas">{{area}}</li>

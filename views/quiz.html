@@ -1,32 +1,33 @@
 <div class="quiz-wrapper">
   <h3>Quiz</h3>
-  <div class="quiz-left">
-    <ul>
+  <div class="quiz-left col-xs-12 col-sm-6">
+    <ul class="col-xs-12">
       <li>How neat of a person are you?</li>
-      <li><div class="col-xs-12"><p class="col-xs-4">Pretty messy</p><p class="col-xs-4">Wishy-washy</p><p class="col-xs-4">I can eat off the floor</p></div></li>
+      <li><div class="col-xs-12"><p class="col-xs-3">Pretty messy</p><p class="col-xs-6">Not so bad</p><p class="col-xs-3">I can eat off the floor</p></div><div class="col-xs-12"><div class="col-xs-1"></div><div class="col-xs-5 pipes"></div><div class="col-xs-5 pipes"></div><div class="col-xs-1 pipes"></div></div></li>
       <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques1"></slider>
       <li>Does other peoples' mess bother you?</li>
-      <li><div><p>I'm Oscar the Grouch</p><p>I get by</p><p>It really bothers me</p></div></li>
+      <li><div class="col-xs-12"><p class="col-xs-3">Not really</p><p class="col-xs-6">I put up with it</p><p class="col-xs-3">It really irks me</p></div><div class="col-xs-12"><div class="col-xs-1"></div><div class="col-xs-5 pipes"></div><div class="col-xs-5 pipes"></div><div class="col-xs-1 pipes"></div></div></li>
       <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques2"></slider>
       <li>Do you make noise (e.g. music, woodworking) often?</li>
-      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <li><div class="col-xs-12"><p class="col-xs-3">They call me mouse</p><p class="col-xs-6">I occasionally woodwork</p><p class="col-xs-3">I own 3 drumsets</p></div><div class="col-xs-12"><div class="col-xs-1"></div><div class="col-xs-5 pipes"></div><div class="col-xs-5 pipes"></div><div class="col-xs-1 pipes"></div></div></li>
       <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques3"></slider>
       <li>Does noise bother you or interrupt sleep?</li>
-      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <li><div class="col-xs-12"><p class="col-xs-3">I sleep like a baby</p><p class="col-xs-6">Somewhat</p><p class="col-xs-3">I require silence</p></div><div class="col-xs-12"><div class="col-xs-1"></div><div class="col-xs-5 pipes"></div><div class="col-xs-5 pipes"></div><div class="col-xs-1 pipes"></div></div></li>
       <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques4"></slider>
       <li>How social of a person are you with roommates?</li>
-      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <li><div class="col-xs-12"><p class="col-xs-3">Don't care much</p><p class="col-xs-6">Sometimes, yeah</p><p class="col-xs-3">They become my best friends</p></div><div class="col-xs-12"><div class="col-xs-1"></div><div class="col-xs-5 pipes"></div><div class="col-xs-5 pipes"></div><div class="col-xs-1 pipes"></div></div></li>
       <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques5"></slider>
       <li>How important is it that your roommates are sociable?</li>
-      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <li><div class="col-xs-12"><p class="col-xs-3">Doesn't much matter</p><p class="col-xs-6">Take it or leave it</p><p class="col-xs-3">They're my besties</p></div><div class="col-xs-12"><div class="col-xs-1"></div><div class="col-xs-5 pipes"></div><div class="col-xs-5 pipes"></div><div class="col-xs-1 pipes"></div></div></li>
       <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques6"></slider>
       <li>Do you go out a lot on weekends?</li>
-      <li><div><p>Pretty messy</p><p>Wishy-washy</p><p>I can eat off the floor</p></div></li>
+      <li><div class="col-xs-12"><p class="col-xs-3">I avoid it</p><p class="col-xs-6">From time to time</p><p class="col-xs-3">Let's rage!</p></div><div class="col-xs-12"><div class="col-xs-1"></div><div class="col-xs-5 pipes"></div><div class="col-xs-5 pipes"></div><div class="col-xs-1 pipes"></div></div></li>
       <slider class="slider" floor="0.1" ceiling="10" precision="1" step=".1" ng-model="quizCtrl.user.quiz.ques7"></slider>
     </ul>
   </div>
-  <div class="quiz-right">
-    <ul>
+  <div class="quiz-right col-xs-12 col-sm-6">
+    <div class="col-md-1 col-lg-2 col-xl-3"></div>
+    <ul class="col-md-10 col-lg-8 col-xl-6">
       <li>What is your gender?</li>
       <li><input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="female" name="ques8"> Female <input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="male" name="ques8"> Male <input type="radio" ng-model="quizCtrl.user.quiz.ques8" value="Other" name="ques8"> Other </li>
       <li>Would you live with people of different genders?</li>
@@ -40,6 +41,6 @@
       <li>Do you mind smoking?</li>
       <li><input type="radio" ng-model="quizCtrl.user.quiz.ques13" value="yes" name="ques13"> Yes <input type="radio" ng-model="quizCtrl.user.quiz.ques13" value="no" name="ques13"> No </li>
     </ul>
-    <button class="btn btn-link" ng-click="quizCtrl.setQuizResults()">Save</button>
+    <button class="btn btn-link col-xs-12" ng-click="quizCtrl.setQuizResults()">Save</button>
   </div>
 </div>

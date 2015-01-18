@@ -355,11 +355,7 @@ a.listing {
 
 .quiz-wrapper .btn {
   color: #50C28C;
-  margin-left: 30px;
-}
-
-.quiz-wrapper .slider {
-  max-width: 400px;
+  margin: 65px 0;
 }
 
 .quiz-wrapper ul {
@@ -367,12 +363,14 @@ a.listing {
 }
 
 .quiz-right {
-  float: right;
-  display: inline-block;
 }
 
-.quiz-left {
-  display: inline-block;
+.slider {
+  margin-bottom: 38px;
+}
+
+.pipes {
+  height: 0;
 }
 
 .quiz-right li:nth-child(2n-1) {
@@ -386,28 +384,23 @@ a.listing {
 
 .quiz-left li:nth-child(3n-2) {
   font-size: 15px;
+  margin-bottom: 10px;
 }
 
 .quiz-left li:nth-child(3n-1) div p {
   display: inline-block;
   text-align: center;
   margin: 0;
-  font-size: 11px;
+  font-size: 13px;
 }
 
-.quiz-left li:nth-child(3n-1) div p:after {
+.pipes:after {
   content: '|';
   position: relative;
-  top: 33px;
-  left: -32px;
-}
-
-.quiz-left li:nth-child(3n):before {
-  content: '|'
+  top: 15px;
 }
 
 .quiz-left li:nth-child(3n-1) div {
-  width: 100%;
   padding: 0;
   margin: 0;
 }

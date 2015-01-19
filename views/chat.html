@@ -1,19 +1,19 @@
-<div class="chat-wrapper">
-  <div class="shared-container">
-    <div class="chat-container">
+<div class="chat-wrapper col-xs-12">
+  <div class="shared-container col-xs-12">
+    <div class="chat-container col-xs-12 col-sm-6">
       <h3>Chat with {{chatCtrl.match}}</h3>
       <ul id="messages" class="messages"></ul>
       <input type='text' id='messageInput' placeholder='Type a message...'>
     </div>
-    <div class="saved-posts">
+    <div class="saved-posts col-xs-12 col-sm-6">
       <h3>Saved Posts</h3>
       <ul ng-model="chatCtrl.savedResults">
         <li ng-repeat="(listingId, listing) in chatCtrl.savedResults"><a ng-click="chatCtrl.removeListing(listingId)">Remove</a><a class="listing" target="_blank" ng-href="{{listing.url}}">{{listing.heading}}</a></li>
       </ul>
     </div>
   </div>
-  <div class="info-search-container">
-    <div class="match-info">
+  <div class="info-search-container col-xs-12">
+    <div class="match-info col-xs-12 col-sm-6">
       <h3>About {{chatCtrl.match}}</h3>
       <p>{{chatCtrl.matchInfo.info.about}}</p>
       <h5>You and {{chatCtrl.match}} are interested in:</h5>
@@ -21,7 +21,7 @@
         <li ng-repeat="area in chatCtrl.matchedAreas">{{area}}</li>
       </ul>
     </div>
-    <div class="craigslist-container">
+    <div class="craigslist-container col-xs-12 col-sm-6">
       <div>
         <h3>Search Craigslist</h3>
         <button class="btn btn-link" ng-click="chatCtrl.findHousing()">Find Housing</button>

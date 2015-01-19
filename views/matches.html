@@ -1,7 +1,11 @@
-<div class="matches-wrapper">
-  <h3>Your Matches</h3>
-  <slider class="slider" floor="0.1" ceiling="100.00" precision="1" step=".1" ng-model="matchCtrl.tightness" translate="showTightness"></slider>{{matchCtrl.tightness}}%
-  <ul id="match-list">
+<div class="matches-wrapper col-xs-12">
+  <h3 class="col-xs-12 col-sm-3" id="your-matches">Your Matches</h3>
+  <div class="slider-wrapper col-xs-12 col-sm-9">
+    <slider class="slider col-xs-10 col-md-8" floor="0.1" ceiling="100.00" precision="1" step=".1" ng-model="matchCtrl.tightness" translate="showTightness"></slider>
+    <div class="col-xs-1">{{matchCtrl.tightness}}%</div>
+  </div>
+  <div class="col-xs-4 col-sm-1"></div>
+  <ul class="col-xs-8 col-sm-11" id="match-list">
     <li ng-repeat="match in matchCtrl.matches" ng-class="matchCtrl.checkChats(match)"><a ng-click="matchCtrl.openChat(match.info.username)">{{match.info.username}}</a></li>
   </ul>
 </div>

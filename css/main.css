@@ -409,12 +409,21 @@ a.listing {
  *    MATCHES PAGE
  *****************************************************/
 
-.matches-wrapper .slider {
-  max-width: 500px;
+#your-matches {
+  text-align: center;
 }
-
 .matches-wrapper a {
   color: black;
+}
+
+.slider-wrapper {
+  margin-top: 7px;
+}
+
+.slider-wrapper div {
+  position: relative;
+  top: 18px;
+  left: 11px;
 }
 
 li.chatting::before {

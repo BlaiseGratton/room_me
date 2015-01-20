@@ -216,11 +216,10 @@
       //end of Firebase Chat example
         
     })
-    .controller('EditController', function($rootScope, profileFactory){
+    .controller('EditController', function($scope, $rootScope, profileFactory){
       var vm = this;
       
       vm.areas = [
-        "All Areas",
         "Bellevue",
         "West Nashville (Belle Meade)",
         "Green Hills",
@@ -245,6 +244,16 @@
         "Whites Creek",
         "Bordeaux"
       ];
+
+      $scope.checkAll = function() {
+        if ($scope.selectedAll) {
+          $scope.selectedAll = true;
+          vm.user.info.areas = vm.areas;
+        } else {
+          $scope.selectedAll = false;
+          vm.user.info.areas = null;
+        }
+      }
 
       profileFactory.getUserInfo(function(data){
         vm.user = data;

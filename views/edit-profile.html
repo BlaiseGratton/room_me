@@ -15,8 +15,9 @@
     <div class="form-group area-input col-sm-6 col-xs-12">
       <label id="area-input-label"><h4>Area(s) Desired:</h4></label>
       <div class="form-control col-xs-10">
+        <label><input ng-model="selectedAll" ng-click="checkAll()" type="checkbox" class="checkbox"><span> All Areas</span></label>
         <label ng-repeat="area in profCtrl.areas">
-          <input type="checkbox" class="checkbox" checklist-value="area" checklist-model="profCtrl.user.info.areas"><span> {{area}}</span>
+          <input type="checkbox" class="checkbox" checklist-value="area" ng-model="profCtrl.selectedAll" checklist-model="profCtrl.user.info.areas"><span> {{area}}</span>
         </label>
       </div>
     </div>

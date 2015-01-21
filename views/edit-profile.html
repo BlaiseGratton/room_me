@@ -1,24 +1,26 @@
 <div class="edit-profile">
   <form name="editProfile" ng-submit="profCtrl.submitProfile()" novalidate>
-    <div class="left-wrapper col-xs-12 col-sm-6">
-      <h3>Edit Profile</h3>
-      <input class="btn btn-link" for="editProfile" type="submit" value="Save">
-      <div class="form-group username-input">
-        <label><h4>Username:</h4></label>
-        <input class="form-control shorten" type="text" ng-model="profCtrl.user.info.username" required>
+    <h3 class="col-xs-6 col-sm-3">Edit Profile</h3>
+    <input class="edit-btn btn btn-link" for="editProfile" type="submit" value="Save">
+    <div class="col-xs-12">
+      <div class="left-wrapper col-xs-12 col-sm-6">
+        <div class="form-group username-input">
+          <label><h4>Username:</h4></label>
+          <input class="form-control shorten" type="text" ng-model="profCtrl.user.info.username" required>
+        </div>
+        <div class="form-group about-input">
+          <label><h4>About:</h4></label>
+          <textarea class="form-control shorten" ng-model="profCtrl.user.info.about" required></textarea>
+        </div>
       </div>
-      <div class="form-group about-input">
-        <label><h4>About:</h4></label>
-        <textarea class="form-control shorten" ng-model="profCtrl.user.info.about" required></textarea>
-      </div>
-    </div>
-    <div class="form-group area-input col-sm-6 col-xs-12">
-      <label id="area-input-label"><h4>Area(s) Desired:</h4></label>
-      <div class="form-control col-xs-10">
-        <label><input ng-model="selectedAll" ng-click="checkAll()" type="checkbox" class="checkbox"><span> All Areas</span></label>
-        <label ng-repeat="area in profCtrl.areas">
-          <input type="checkbox" class="checkbox" checklist-value="area" ng-model="profCtrl.selectedAll" checklist-model="profCtrl.user.info.areas"><span> {{area}}</span>
-        </label>
+      <div class="form-group area-input col-sm-6 col-xs-12">
+        <label id="area-input-label"><h4>Area(s) Desired:</h4></label>
+        <div class="form-control col-xs-10">
+          <label><input ng-model="selectedAll" ng-click="checkAll()" type="checkbox" class="checkbox"><span> All Areas</span></label>
+          <label ng-repeat="area in profCtrl.areas">
+            <input type="checkbox" class="checkbox" checklist-value="area" ng-model="profCtrl.selectedAll" checklist-model="profCtrl.user.info.areas"><span> {{area}}</span>
+          </label>
+        </div>
       </div>
     </div>
   </form>

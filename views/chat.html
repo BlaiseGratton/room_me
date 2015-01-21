@@ -22,22 +22,25 @@
       </ul>
     </div>
     <div class="craigslist-container col-xs-12 col-sm-6">
-      <div>
-        <h3>Search Craigslist</h3>
-        <button class="btn btn-link" ng-click="chatCtrl.findHousing()">Find Housing</button>
+      <div class="craigslist-header col-xs-12">
+        <h3 class="col-xs-12 col-sm-8 col-md-7">Search Craigslist</h3>
+        <div class="col-xs-12 col-sm-1">
+          <div class="col-sm-3 col-md-3"></div>
+          <button class="btn btn-link col-xs-8 col-sm-4 col-md-6" ng-click="chatCtrl.findHousing()">Find Housing</button>
+        </div>
       </div>
-      <select ng-model="chatCtrl.userQueries.bedrooms">
+      <select class="col-xs-7 col-sm-4" ng-model="chatCtrl.userQueries.bedrooms">
         <option value="1br">1 bedroom</option>
         <option value="2br">2 bedrooms</option>
         <option value="3br">3 bedrooms</option>
         <option value="4br">4 bedrooms</option>
         <option value="5br">5 bedrooms</option>
       </select>
-      <select k-ng-model="chatCtrl.userQueries.areas" id="area-selector" ng-model="chatCtrl.userQueries.area">
+      <select class="col-xs-7 col-sm-4" k-ng-model="chatCtrl.userQueries.areas" id="area-selector" ng-model="chatCtrl.userQueries.area">
         <option value="" disabled>-Select an area-</option>
         <option ng-repeat="area in chatCtrl.userQueries.areas" value="{{area}}">{{area}}</option>
       </select>
-      <select k-ng-model="chatCtrl.stamp" ng-model="chatCtrl.timestamp">
+      <select class="col-xs-7 col-sm-4" k-ng-model="chatCtrl.stamp" ng-model="chatCtrl.timestamp">
         <option disabled>-Select a time range-</option>
         <option value="1d..">Within 24 Hours</option>
         <option value="7d..1d">Within the Past Week</option>
@@ -45,7 +48,7 @@
         <option value="21d..14d">2-3 Weeks Ago</option>
         <option value="31d..31d">3-4 Weeks Ago</option>
       </select>
-      <div id="results-list" ng-show="chatCtrl.results">
+      <div class="col-xs-12" id="results-list" ng-show="chatCtrl.results">
         <h4>Results ({{chatCtrl.results.length}})</h4>
         <ul>
           <li ng-repeat="result in chatCtrl.results"><a ng-click="chatCtrl.saveListing(result)">Save</a><a class="listing" target="_blank" ng-href="{{result.external_url}}">{{result.heading}}</a></li>

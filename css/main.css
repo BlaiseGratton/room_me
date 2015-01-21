@@ -49,6 +49,24 @@ body:after {
   clear: both;
 }
 
+/*********       Buttons      *************************/
+
+.btn {
+  background-color: #54cf89;
+  color: #e6e6e6;
+  border-radius: 12px;
+  min-width: 109px;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #54cf89;
+  color: #e6e6e6;
+}
+
+
 /******************************************************
  *    FONTS
  *******************************************************/
@@ -192,6 +210,10 @@ footer.footer {
   text-align: center;
 }
 
+.register-page .btn, .login-page .btn {
+  border-radius: 4px;
+}
+
 .register-link a {
   color: #50c28c;
 }
@@ -208,11 +230,6 @@ footer.footer {
   margin-top: 48px;
 }
 
-.profile-page a {
-  margin-left: 112px;
-  color: #50C28C;
-}
-
 .profile-page p {
   padding-left: 40px;
   max-width: 386px;
@@ -220,6 +237,10 @@ footer.footer {
 
 .prof-info {
   display: inline-block;
+}
+
+.prof-btn {
+  margin-top: 15px;
 }
 
 /*****************************************************
@@ -234,9 +255,8 @@ footer.footer {
   margin-top: 48px;
 }
 
-.edit-profile .btn {
-  color: #50C28C;
-  margin-left: 55px;
+.edit-btn {
+  margin-top: 15px;
 }
 
 .edit-profile input, textarea {
@@ -255,10 +275,6 @@ textarea {
   height: 100%;
   margin-left: 40px;
   width: 75%;
-}
-
-.area-input {
-  margin-top: 58px;
 }
 
 .area-input input, label {
@@ -288,11 +304,20 @@ a.listing {
   overflow: scroll;
   max-height: 300px;
   font-size: 12px;
-  display: inline-block;
+  margin: 0 0 14px 0;
+  position: relative;
+  left: 16px;
 }
 
-.craigslist-container button {
-  margin: 0 0 0px 45px;
+.craigslist-header, .craigslist-container {
+  padding: 0;
+}
+
+.craigslist-header .btn {
+  margin: 12px;
+  min-width: 128px;
+  position: relative;
+  left: -13px;
 }
 
 .messages strong {
@@ -330,15 +355,6 @@ a.listing {
   display: inline-block;
 }
 
-.craigslist-container .btn {
-  color: #50C28C;
-  margin: 0 0 8px 55px;
-}
-
-.chat-wrapper h3 {
-  margin-top: 40px;
-}
-
 .craigslist-container {
   margin-bottom: 40px;
 }
@@ -352,7 +368,6 @@ a.listing {
 }
 
 .quiz-wrapper .btn {
-  color: #50C28C;
   margin: 65px 0;
 }
 

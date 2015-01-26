@@ -127,15 +127,6 @@ header {
   font-size: 17px;
 }
 
-/*.nav a:focus {
-  color: #e6e6e6;
-  border-radius: 2px;
-}
-
-.nav li:focus {
-  background-color: #54cf89;
-}*/
-
 .nav>li>a:focus {
   background-color: #54cf89;
   color: #e6e6e6;
@@ -150,7 +141,7 @@ ul.nav{
   background-color: #54cf89;
   padding: 4px;
   border-radius: 3px;
-  min-width: 130px;
+  min-width: 120px;
 }
 
 /*****************************************************
@@ -274,7 +265,7 @@ textarea {
 .area-input div {
   height: 100%;
   margin-left: 40px;
-  width: 75%;
+  width: 86%;
 }
 
 .area-input input, label {
@@ -292,6 +283,10 @@ textarea {
 
 .chat-wrapper a {
   color: #50C28C;
+}
+
+.chat-container h3 {
+  margin-top: 60px;
 }
 
 a.listing {
@@ -329,6 +324,10 @@ a.listing {
   max-height: 200px;
 }
 
+.saved-posts {
+  margin-top: 40px;
+}
+
 .saved-posts ul {
   overflow: scroll;
   max-height: 200px;
@@ -350,13 +349,12 @@ a.listing {
   margin-left: 10px;
 }
 
-.chat-container {
-  max-width: 50%;
-  display: inline-block;
+.match-info {
+margin-top: 40px;
 }
 
 .craigslist-container {
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 /*****************************************************

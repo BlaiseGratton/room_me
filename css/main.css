@@ -440,13 +440,13 @@ margin-top: 40px;
 li.chatting::before {
   background-color: #7cbc3c;
   content: ''; 
-  border-radius: 50%;
-  margin-right: -11px;
-  padding: 0px 5px;
+  border-radius: 8px;
+  margin-right: -8px;
+  padding: 1px 4px;
   position: relative;
   left: -21px;
   bottom: 2px;
-  font-size: 8px;
+  font-size: 5px;
 }
 
 #match-list li {

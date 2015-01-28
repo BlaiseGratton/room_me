@@ -469,9 +469,12 @@ li.chatting::before {
  * *************************************************************************/
 
 .landing-wrapper {
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
+.landing-title {
+  text-align: center;
+}
 
 
 /**** CAROUSEL ************************************************************/

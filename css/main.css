@@ -159,16 +159,21 @@ footer {
 footer.footer {
   position: absolute;
   bottom: 0;
+  padding: 0;
+}
+
+.footer-list {
+  padding: 0;
 }
 
 .footer-nav {
   margin: 10px auto 0;
-  padding: 22px 0 0;
+  padding: 0;
 }
 
 .footer-nav li {
   color: #8e959b;
-  margin: 3px 0 6px;
+  margin: 14px 0 4px;
   padding: 0;
   text-align: center;
 }

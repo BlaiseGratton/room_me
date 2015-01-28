@@ -334,7 +334,7 @@ a.listing {
 }
 
 .saved-posts {
-  margin-top: 40px;
+  margin-top: 41px;
 }
 
 .saved-posts ul {
@@ -480,6 +480,20 @@ li.chatting::before {
 
 .landing-title {
   text-align: center;
+  margin-top: 63px;
+}
+
+.landing-info span {
+  font-family: 'Lobster', serif;
+  font-size: 19px;
+}
+
+.landing-info {
+  margin-top: 100px;
+}
+
+.landing-info p {
+  padding: 40px auto 20px;
 }
 
 

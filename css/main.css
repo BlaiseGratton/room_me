@@ -496,6 +496,9 @@ li.chatting::before {
   padding: 40px auto 20px;
 }
 
+.landing-wrapper a {
+  margin-top: 40px;
+}
 
 /**** CAROUSEL ************************************************************/
 

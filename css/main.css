@@ -41,6 +41,7 @@ body:after {
 .view-wrapper {
   height: 100%;
   width: 100%;
+  margin-bottom: 64px;
 }
 
 .view-wrapper:after {
@@ -153,7 +154,7 @@ ul.nav{
 
 footer {
   background-color: #384047;
-  height: 100px;
+  height: 105px;
 }
 
 footer.footer {
@@ -167,7 +168,7 @@ footer.footer {
 }
 
 .footer-nav {
-  margin: 10px auto 0;
+  margin: 10px auto 18px;
   padding: 0;
 }
 
@@ -518,15 +519,15 @@ li.chatting::before {
 }
 
 .carousel h2 {
-  font-size: 1em;
-  padding: 0.5em;
+  font-size: .8em;
+  padding: 0.1em;
   position: absolute;
   right: 10px;
   bottom: 10px;
   left: 10px;
   text-align: right;
   color: #fff;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.55);
 }
 
 @-webkit-keyframes carousel {

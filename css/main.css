@@ -72,26 +72,29 @@ body:after {
  *******************************************************/
 
 h3 {
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
 }
 
 h4 {
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu', sans-serif;
 }
 
 a {
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
 }
 
 .navbar a {
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-size: 18px;
 }
 
 p, li {
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu', sans-serif;
 }
 
+.landing-wrapper h1 {
+  font-family: 'Lobster', serif;
+}
 
 
 /******************************************************

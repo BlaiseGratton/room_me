@@ -50,6 +50,12 @@ body:after {
   clear: both;
 }
 
+/********* FOR ANGULAR UI-BOOTSTRAP HREFS *************/
+
+.nav, .pagination, .carousel, .panel-title a { 
+  cursor: pointer; 
+}
+
 /*********       Buttons      *************************/
 
 .btn {

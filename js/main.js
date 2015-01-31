@@ -1,6 +1,6 @@
 ;(function(){
   'use strict';
   
-  angular.module('roommateApp', ['ngRoute', 'uiSlider', 'checklist-model'])
+  angular.module('roommateApp', ['ngRoute', 'uiSlider', 'checklist-model', 'ui.bootstrap'])
       
 }());

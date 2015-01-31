@@ -33,14 +33,14 @@
     <div class="margin col-md-1"></div> 
     <div ng-view class="view-content col-md-10 col-xs-12"></div>
   </div>
-  <footer class="footer col-xs-12">
+  <footer ng-controller="ModalController" class="footer col-xs-12">
     <div class="margin col-md-1"></div>
       <div class="footer-list col-xs-12 col-md-10"> 
         <ul class="footer-nav col-xs-12">
-          <li class="col-xs-6 col-sm-3">About</li>
-          <li class="col-xs-6 col-sm-3">Privacy</li>
-          <li class="col-xs-6 col-sm-3">License</li>
-          <li class="col-xs-6 col-sm-3">Neighborhood Map</li>
+          <li class="col-xs-6 col-sm-3"><a ng-click="open()">About</a></li>
+          <li class="col-xs-6 col-sm-3"><a>Privacy</a></li>
+          <li class="col-xs-6 col-sm-3"><a>License</a></li>
+          <li class="col-xs-6 col-sm-3"><a>Neighborhood Map</a></li>
         </ul>
       </div>
     </footer>

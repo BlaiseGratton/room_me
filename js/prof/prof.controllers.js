@@ -278,5 +278,26 @@
       };
 
     })
+    .controller('ModalController', function($scope, $modal, $log){
+      $scope.open = function(size) {
+
+        var modalInstance = $modal.open({
+          templateUrl: 'views/about-modal.html',
+          controller: '',
+          backdropClass: 'backdrop',
+          size: size,
+          resolve: {
+            items: function(){
+              return $scope.items;
+            }
+          }
+        });
+
+        modalInstance.resule.then(function(selectedItem){
+        }, function(){
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
+    })
 
 }());

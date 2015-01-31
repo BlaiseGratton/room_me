@@ -179,10 +179,21 @@ footer.footer {
 }
 
 .footer-nav li {
-  color: #8e959b;
   margin: 14px 0 4px;
   padding: 0;
   text-align: center;
+}
+
+.footer-nav a {
+  color: #8e959b;
+}
+
+/*****************************************************
+ *   MODALS 
+ *****************************************************/
+
+.modal-backdrop {
+  height: 100%;
 }
 
 /*****************************************************

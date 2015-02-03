@@ -5,7 +5,7 @@
     .factory('authFactory', function($rootScope, $location, FIREBASE_URL){
       var factory = {};
       var ref = new Firebase(FIREBASE_URL);
-      // $rootScope.user = null;
+      $rootScope.user = null;
       $rootScope.user = ref.getAuth();
 
       factory.requireLogin = function(){

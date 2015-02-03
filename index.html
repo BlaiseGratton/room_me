@@ -33,19 +33,19 @@
     <div class="margin col-md-1"></div> 
     <div ng-view class="view-content col-md-10 col-xs-12"></div>
   </div>
-  <footer ng-controller="ModalController" class="footer col-xs-12">
+  <footer class="footer col-xs-12">
     <div class="margin col-md-1"></div>
       <div class="footer-list col-xs-12 col-md-10"> 
         <ul class="footer-nav col-xs-12">
-          <li class="col-xs-6 col-sm-3"><a ng-click="open()">About</a></li>
-          <li class="col-xs-6 col-sm-3"><a>Privacy</a></li>
-          <li class="col-xs-6 col-sm-3"><a>License</a></li>
-          <li class="col-xs-6 col-sm-3"><a>Neighborhood Map</a></li>
+          <li ng-controller="AboutModalController" class="col-xs-6 col-sm-3"><a ng-click="open('views/about-modal.html')">About</a></li>
+          <li ng-controller="PrivacyModalController" class="col-xs-6 col-sm-3"><a ng-click="open()">Privacy</a></li>
+          <li ng-controller="LicenseModalController" class="col-xs-6 col-sm-3"><a ng-click="open()">License</a></li>
+          <li ng-controller="MapModalController" class="col-xs-6 col-sm-3"><a ng-click="open()">Neighborhood Map</a></li>
         </ul>
       </div>
     </footer>
-    <script type="text/javascript">
-  WebFontConfig = { google: { families: [ 'Lobster::latin', 'Ubuntu::latin', 'Raleway::latin' ] } }; (function() { var wf = document.createElement('script'); wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'; wf.type = 'text/javascript'; wf.async = 'true'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wf, s); })(); </script>
+    <script>
+    WebFontConfig = { google: { families: [ 'Lobster::latin', 'Ubuntu::latin', 'Raleway::latin' ] } }; (function() { var wf = document.createElement('script'); wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'; wf.type = 'text/javascript'; wf.async = 'true'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wf, s); })(); </script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

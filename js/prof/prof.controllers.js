@@ -278,26 +278,68 @@
       };
 
     })
-    .controller('ModalController', function($scope, $modal, $log){
+    .controller('AboutModalController', function($scope, $modal, $log){
       $scope.open = function(size) {
 
         var modalInstance = $modal.open({
-          templateUrl: 'views/about-modal.html',
+          templateUrl: 'views/_about-modal.html',
           controller: '',
-          backdropClass: 'backdrop',
           size: size,
-          resolve: {
-            items: function(){
-              return $scope.items;
-            }
-          }
         });
 
-        modalInstance.resule.then(function(selectedItem){
+        modalInstance.result.then(function(selectedItem){
         }, function(){
           $log.info('Modal dismissed at: ' + new Date());
         });
       };
     })
+    .controller('PrivacyModalController', function($scope, $modal, $log){
+      $scope.open = function(size) {
+
+        var modalInstance = $modal.open({
+          templateUrl: 'views/_privacy-modal.html',
+          controller: '',
+          size: size,
+        });
+
+        modalInstance.result.then(function(selectedItem){
+        }, function(){
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
+    })
+    .controller('LicenseModalController', function($scope, $modal, $log){
+      $scope.open = function(size) {
+
+        var modalInstance = $modal.open({
+          templateUrl: 'views/_license-modal.html',
+          controller: '',
+          size: size,
+        });
+
+        modalInstance.result.then(function(selectedItem){
+        }, function(){
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
+    })
+    .controller('MapModalController', function($scope, $modal, $log){
+      $scope.open = function(size) {
+
+        var modalInstance = $modal.open({
+          templateUrl: 'views/_map-modal.html',
+          controller: '',
+          size: size,
+        });
+
+        modalInstance.result.then(function(selectedItem){
+        }, function(){
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
+    })
+
+
+
 
 }());

@@ -2,6 +2,12 @@
   'use strict';
 
   angular.module('roommateApp')
+    .controller('NavController', function($rootScope){
+      var vm = this;
+      vm.getAuth = function(){
+        return $rootScope.user ? true : false;
+      };
+    })
     .controller('ProfileController', function(profileFactory, $rootScope){
       var vm = this;
 

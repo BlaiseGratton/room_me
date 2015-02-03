@@ -15,7 +15,7 @@
       <a href="/#/"><img src="img/room_me_logo_salmon.svg" alt="room_me_logo"></a>
     </div>
     <div class="col-xs-1"></div>
-    <div class="navbar-wrapper col-md-7 col-sm-9 col-xs-4"
+    <div ng-controller="NavController as nav" ng-show="nav.getAuth()" class="navbar-wrapper col-md-7 col-sm-9 col-xs-4"
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <ul class="col-xs-12 nav navbar-nav navbar-right">

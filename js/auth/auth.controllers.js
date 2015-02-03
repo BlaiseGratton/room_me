@@ -26,6 +26,7 @@
     .controller('LogoutController', function($scope, $rootScope, $location, authFactory){
       authFactory.logout(function(){
         $location.path('/login');
+        $rootScope.user = false;
         $scope.$apply();
       });
 

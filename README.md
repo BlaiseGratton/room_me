@@ -10,4 +10,5 @@ Remaining fixes/issues to address:
 * fix styling of some buttons when they are clicked/active state
 * adjust time ranges of Craigslist search paramater
 * make profile creation a bit more obvious after initial registration
+* fix socketing of shared posts on the chat page
 

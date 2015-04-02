@@ -91,11 +91,6 @@
       var vm = this;
       vm.chatId = $location.$$path.slice(7);
      
-    //  profileFactory.getHousing(function(data){
-    //    vm.housing = data;
-    //    console.log(vm.housing);
-    //  });
-      
       vm.userQueries = {
         bedrooms: "2br",
         areas: ['-Select an area-'],
@@ -185,6 +180,7 @@
 
       vm.listingsRef.on('value', function(snapshot){
         vm.savedResults = snapshot.val();
+        $scope.$apply();
       });
 
       vm.messagesRef = new Firebase('https://roommate-finder.firebaseio.com/chats/' + vm.chatId);
@@ -196,10 +192,9 @@
       vm.messageField = $('#messageInput');
       vm.messageList = $('#messages');
 
-      vm.messageField.keypress(function (e) {
+      vm.messageField.keypress(function(e){
         if (vm.messageField.val() !== '' && e.keyCode == 13) {
           vm.message = vm.messageField.val();
-
           vm.messagesRef.push({name: vm.username, text: vm.message});
           vm.messageField.val('');
         }
